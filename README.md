@@ -18,7 +18,7 @@ let oldWayHandler : HttpHandler =
         }
 ```
 
-...this can be done...
+this can be done...
 
 ```fsharp
 let anotherWayHandler : HttpHandler =
@@ -42,4 +42,4 @@ let app =
 
 ## Unit Testing
 When unit testing the HTTPHandler functions, you could simply pass the dependencies without having to set up a test server.
-In other words, the tests can focus on the handlers behavior instead of the distraction of dependency injection.
+In other words, the tests can focus on the handlers behavior instead of caring about dependency injection.
