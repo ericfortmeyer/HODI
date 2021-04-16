@@ -8,10 +8,11 @@
     <Copyright>Copyright (c) Eric Fortmeyer 2021</Copyright>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/ericfortmeyer/HODI</RepositoryUrl>
-    <PackageTags>f#,dependency injection,http handlers,fsharp</PackageTags>
+    <PackageTags>F#, FSharp, dependency injection, giraffe</PackageTags>
     <PackageProjectUrl>https://github.com/ericfortmeyer/HODI</PackageProjectUrl>
     <SignAssembly>true</SignAssembly>
     <PackageIcon>hodi.png</PackageIcon>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\..\..\..\..\..\Pictures\hodi.png">
+    <None Include="..\..\hodi.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
