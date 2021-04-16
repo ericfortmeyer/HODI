@@ -1,3 +1,5 @@
+![HODI](https://raw.githubusercontent.com/ericfortmeyer/HODI/master/hodi.png)
+
 # HODI
 
 Higher Order Dependency Injection
@@ -5,6 +7,18 @@ Higher Order Dependency Injection
 This set of functions was designed to be simple and consistent with a minimal implementation.
 
 The purpose of this library is to make unit testing of functions used as HTTP handlers in F# web applications more straightforward.
+
+## Install
+
+```
+PM> Install-Package HODI
+```
+
+or...
+
+```
+dotnet add package HODI
+```
 
 ## Defining Handlers
 Instead of...
