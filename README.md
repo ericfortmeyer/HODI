@@ -4,9 +4,13 @@
 
 Higher Order Dependency Injection
 
-This set of functions was designed to be simple and consistent with a minimal implementation.
+[HODI](https://www.nuget.org/packages/HODI/) is a set of functions designed to be simple and consistent with a minimal implementation.
 
 The purpose of this library is to make unit testing of functions used as HTTP handlers in F# web applications more straightforward.
+
+[![NuGet Info]](https://www.nuget.org/packages/HODI/)
+
+[![.NET](https://github.com/ericfortmeyer/HODI/actions/workflows/dotnet.yml/badge.svg)](https://github.com/ericfortmeyer/HODI/actions/workflows/dotnet.yml)
 
 ## Install
 
