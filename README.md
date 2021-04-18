@@ -8,7 +8,7 @@ Higher Order Dependency Injection
 
 The purpose of this library is to make unit testing of functions used as HTTP handlers in F# web applications more straightforward.
 
-[![NuGet Info]](https://www.nuget.org/packages/HODI/)
+[![NuGet Info](https://buildstats.info/nuget/HODI?includePreReleases=true)](https://www.nuget.org/packages/HODI/)
 
 [![.NET](https://github.com/ericfortmeyer/HODI/actions/workflows/dotnet.yml/badge.svg)](https://github.com/ericfortmeyer/HODI/actions/workflows/dotnet.yml)
 
