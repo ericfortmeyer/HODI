@@ -13,15 +13,12 @@
     <PackageTags>F#, FSharp, dependency injection, giraffe</PackageTags>
     <SignAssembly>false</SignAssembly>
     <PackageIcon>hodi.png</PackageIcon>
-    <Version>1.0.3</Version>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="DependencyInjection.fs" />
     <Compile Include="Giraffe\DependencyInjection.fs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Giraffe" Version="4.1.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +30,10 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
   </ItemGroup>
 
 </Project>
