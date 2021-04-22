@@ -30,10 +30,10 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Build
-      run: dotnet build -c Release
+      run: dotnet build --nologo -v quiet
     - name: Test
       run: |
-        dotnet test --no-build --verbosity normal -r coverage - --collect:"XPlat Code Coverage" /p:Threshold=85 -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=lcov
+        dotnet test --nologo --no-build --verbosity normal -r coverage - --collect:"XPlat Code Coverage" /p:Threshold=85 -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=lcov
         mv coverage/*/coverage.info coverage/lcov.info
     - name: Coveralls
       uses: coverallsapp/github-action@master
