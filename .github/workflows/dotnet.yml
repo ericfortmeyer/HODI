@@ -33,7 +33,7 @@ jobs:
       run: dotnet build --nologo -v quiet
     - name: Test
       run: |
-        dotnet test --nologo --no-build --verbosity normal -r coverage - --collect:"XPlat Code Coverage" --settings:"coverlet.settings"
+        dotnet test --nologo --no-build --verbosity normal -r coverage - --collect:"XPlat Code Coverage" --settings:"coverlet.runsettings"
         mv coverage/*/coverage.info coverage/lcov.info
     - name: Coveralls
       uses: coverallsapp/github-action@master
