@@ -7,7 +7,6 @@
 module HODI.Giraffe.DependencyInjection
 
 open System
-open System.Diagnostics.CodeAnalysis
 
 /// <summary>
 /// Gets a dependency from the DI container and provides it to the supplied handler.
