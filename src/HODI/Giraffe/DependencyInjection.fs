@@ -17,7 +17,6 @@ open System.Diagnostics.CodeAnalysis
 /// funcWithADependency |> <see cref="inject" />
 /// </summary>
 [<Obsolete("Use the functions in the HODI.DependencyInjection module instead")>]
-[<ExcludeFromCodeCoverage>]
 let inject = HODI.DependencyInjection.inject
 
 
@@ -29,7 +28,6 @@ let inject = HODI.DependencyInjection.inject
 /// funcWith2Dependencies |> <see cref="inject2" />
 /// </summary>
 [<Obsolete("Use the functions in the HODI.DependencyInjection module instead")>]
-[<ExcludeFromCodeCoverage>]
 let inject2 = HODI.DependencyInjection.inject2
 
 
@@ -41,7 +39,6 @@ let inject2 = HODI.DependencyInjection.inject2
 /// funcWith3Dependencies |> <see cref="inject3" />
 /// </summary>
 [<Obsolete("Use the functions in the HODI.DependencyInjection module instead")>]
-[<ExcludeFromCodeCoverage>]
 let inject3 = HODI.DependencyInjection.inject3
 
 
@@ -53,7 +50,6 @@ let inject3 = HODI.DependencyInjection.inject3
 /// funcWith4Dependencies |> <see cref="inject4" />
 /// </summary>
 [<Obsolete("Use the functions in the HODI.DependencyInjection module instead")>]
-[<ExcludeFromCodeCoverage>]
 let inject4 = HODI.DependencyInjection.inject4
 
 
@@ -65,7 +61,6 @@ let inject4 = HODI.DependencyInjection.inject4
 /// funcWith5Dependencies |> <see cref="inject5" />
 /// </summary>
 [<Obsolete("Use the functions in the HODI.DependencyInjection module instead")>]
-[<ExcludeFromCodeCoverage>]
 let inject5 = HODI.DependencyInjection.inject5
 
 
@@ -77,7 +72,6 @@ let inject5 = HODI.DependencyInjection.inject5
 /// funcWith6Dependencies |> <see cref="inject6" />
 /// </summary>
 [<Obsolete("Use the functions in the HODI.DependencyInjection module instead")>]
-[<ExcludeFromCodeCoverage>]
 let inject6 = HODI.DependencyInjection.inject6
 
 
@@ -89,7 +83,6 @@ let inject6 = HODI.DependencyInjection.inject6
 /// funcWith7Dependencies |> <see cref="inject7" />
 /// </summary>
 [<Obsolete("Use the functions in the HODI.DependencyInjection module instead")>]
-[<ExcludeFromCodeCoverage>]
 let inject7 = HODI.DependencyInjection.inject7
 
 
@@ -97,7 +90,6 @@ let inject7 = HODI.DependencyInjection.inject7
 /// Provides a given value (e.g. the result of a <see cref="routef" /> or <see cref="bindForm" />) along with a dependency to the supplied handler.
 /// </summary>
 [<Obsolete("Use the functions in the HODI.DependencyInjection module instead")>]
-[<ExcludeFromCodeCoverage>]
 let injectPlus = HODI.DependencyInjection.injectPlus
 
 
@@ -105,7 +97,6 @@ let injectPlus = HODI.DependencyInjection.injectPlus
 /// Provides a given value (e.g. the result of a <see cref="routef" /> or <see cref="bindForm" />) along with 2 dependencies to the supplied handler.
 /// </summary>
 [<Obsolete("Use the functions in the HODI.DependencyInjection module instead")>]
-[<ExcludeFromCodeCoverage>]
 let inject2Plus = HODI.DependencyInjection.inject2Plus
 
 
@@ -113,7 +104,6 @@ let inject2Plus = HODI.DependencyInjection.inject2Plus
 /// Provides a given value (e.g. the result of a <see cref="routef" /> or <see cref="bindForm" />) along with 3 dependencies to the supplied handler.
 /// </summary>
 [<Obsolete("Use the functions in the HODI.DependencyInjection module instead")>]
-[<ExcludeFromCodeCoverage>]
 let inject3Plus = HODI.DependencyInjection.inject3Plus
 
 
@@ -121,7 +111,6 @@ let inject3Plus = HODI.DependencyInjection.inject3Plus
 /// Passes given value (e.g. the result of a <see cref="routef" /> or <see cref="bindForm" />) along with 4 dependencies and provides them to the supplied handler.
 /// </summary>
 [<Obsolete("Use the functions in the HODI.DependencyInjection module instead")>]
-[<ExcludeFromCodeCoverage>]
 let inject4Plus = HODI.DependencyInjection.inject4Plus
 
 
@@ -129,5 +118,4 @@ let inject4Plus = HODI.DependencyInjection.inject4Plus
 /// Passes given value (e.g. the result of a <see cref="routef" /> or <see cref="bindForm" />) along with 5 dependencies and provides them to the supplied handler.
 /// </summary>
 [<Obsolete("Use the functions in the HODI.DependencyInjection module instead")>]
-[<ExcludeFromCodeCoverage>]
 let inject5Plus = HODI.DependencyInjection.inject5Plus

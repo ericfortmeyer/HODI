@@ -1,4 +1,4 @@
-module HODI.Tests
+module HODI.DependencyInjection.Tests
 
 open System.Threading.Tasks
 
@@ -9,8 +9,6 @@ open Microsoft.Extensions.DependencyInjection
 open NSubstitute
 
 open NUnit.Framework
-
-open HODI.DependencyInjection
 
 type HttpFunc = HttpContext -> Task<HttpContext option>
 
