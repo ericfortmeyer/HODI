@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="GiraffeTests.fs" />
+    <Compile Include="DependencyInjectionTests.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
