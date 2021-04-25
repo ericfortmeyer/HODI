@@ -59,7 +59,7 @@ let ``The inject function should get a dependency from the service container and
 
 
 [<Test>]
-let ``The inject2 function should get 2 dependenies from the service container and pass it to the given handler`` () =
+let ``The inject2 function should get 2 dependencies from the service container and pass it to the given handler`` () =
     let systemUnderTest = inject2
 
     let givenHandler =
@@ -80,7 +80,7 @@ let ``The inject2 function should get 2 dependenies from the service container a
     |> ignore
 
 [<Test>]
-let ``The inject3 function should get 3 dependenies from the service container and pass it to the given handler`` () =
+let ``The inject3 function should get 3 dependencies from the service container and pass it to the given handler`` () =
     let systemUnderTest = inject3
 
     let givenHandler =
@@ -103,7 +103,7 @@ let ``The inject3 function should get 3 dependenies from the service container a
     |> ignore
 
 [<Test>]
-let ``The inject4 function should get 4 dependenies from the service container and pass it to the given handler`` () =
+let ``The inject4 function should get 4 dependencies from the service container and pass it to the given handler`` () =
     let systemUnderTest = inject4
 
     let givenHandler =
@@ -128,7 +128,7 @@ let ``The inject4 function should get 4 dependenies from the service container a
     |> ignore
 
 [<Test>]
-let ``The inject5 function should get 5 dependenies from the service container and pass it to the given handler`` () =
+let ``The inject5 function should get 5 dependencies from the service container and pass it to the given handler`` () =
     let systemUnderTest = inject5
 
     let givenHandler =
@@ -156,7 +156,7 @@ let ``The inject5 function should get 5 dependenies from the service container a
 
 
 [<Test>]
-let ``The inject6 function should get 6 dependenies from the service container and pass it to the given handler`` () =
+let ``The inject6 function should get 6 dependencies from the service container and pass it to the given handler`` () =
     let systemUnderTest = inject6
 
     let givenHandler =
@@ -185,7 +185,7 @@ let ``The inject6 function should get 6 dependenies from the service container a
     |> ignore
 
 [<Test>]
-let ``The inject7 function should get 7 dependenies from the service container and pass it to the given handler`` () =
+let ``The inject7 function should get 7 dependencies from the service container and pass it to the given handler`` () =
     let systemUnderTest = inject7
 
     let givenHandler =
@@ -240,7 +240,7 @@ let ``The injectPlus function should get a dependency from the service container
 
 [<Test>]
 [<TestCase("This is a string")>]
-let ``The inject2Plus function should get 2 dependenies from the service container and pass it and an additional argument to the given handler`` givenAdditionalArgument
+let ``The inject2Plus function should get 2 dependencies from the service container and pass it and an additional argument to the given handler`` givenAdditionalArgument
                                                                                                                                                  =
     let systemUnderTest = inject2Plus
 
@@ -264,7 +264,7 @@ let ``The inject2Plus function should get 2 dependenies from the service contain
 
 [<Test>]
 [<TestCase("This is a string")>]
-let ``The inject3Plus function should get 3 dependenies from the service container and pass them and another argument to the given handler`` givenAdditionalArgument
+let ``The inject3Plus function should get 3 dependencies from the service container and pass them and another argument to the given handler`` givenAdditionalArgument
                                                                                                                                              =
     let systemUnderTest = inject3Plus
 
@@ -290,7 +290,7 @@ let ``The inject3Plus function should get 3 dependenies from the service contain
 
 [<Test>]
 [<TestCase("This is a string")>]
-let ``The inject4Plus function should get 4 dependenies from the service container and pass them and another argument to the given handler`` givenAdditionalArgument
+let ``The inject4Plus function should get 4 dependencies from the service container and pass them and another argument to the given handler`` givenAdditionalArgument
                                                                                                                                              =
     let systemUnderTest = inject4Plus
 
@@ -318,7 +318,7 @@ let ``The inject4Plus function should get 4 dependenies from the service contain
 
 [<Test>]
 [<TestCase("This is a string")>]
-let ``The inject5Plus function should get 5 dependenies from the service container and pass them and another arguments to the given handler`` givenAdditionalArgument
+let ``The inject5Plus function should get 5 dependencies from the service container and pass them and another arguments to the given handler`` givenAdditionalArgument
                                                                                                                                               =
     let systemUnderTest = inject5Plus
 
