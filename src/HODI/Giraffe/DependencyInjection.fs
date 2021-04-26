@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// A set of functions used to inject dependencies into higher order functions.
 ///
-/// This module is obsolute.
+/// This module is obsolete.
 /// Use the HODI.DependencyInjection module instead
 /// </summary>
 module HODI.Giraffe.DependencyInjection
