@@ -13,7 +13,7 @@
     <PackageTags>F#, FSharp, dependency injection, giraffe</PackageTags>
     <SignAssembly>false</SignAssembly>
     <PackageIcon>hodi.png</PackageIcon>
-    <Version>1.2.0</Version>
+    <Version>1.2.1</Version>
     <PackageReleaseNotes>Functions now throw InvalidOperationException if a requested type does not exist.
 Reducing the number of calls to IServiceProvider::get_RequestServices.
 Minor refactoring.</PackageReleaseNotes>
@@ -25,7 +25,7 @@ Minor refactoring.</PackageReleaseNotes>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="FSharp.Core" Version="5.0.*" />
+    <PackageReference Update="FSharp.Core" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
