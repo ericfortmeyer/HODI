@@ -14,7 +14,7 @@ env:
   DOTNET_NOLOGO: true
 jobs:
   build:
-    uses: ./.github/workflows/release_build
+    uses: ./.github/workflows/release_build.yml
   test:
     runs-on: ubuntu-latest
     needs: build
