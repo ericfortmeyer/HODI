@@ -26,7 +26,18 @@ jobs:
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: ${{ matrix.dotnet }}
+    - name: Build Latest
+      if: ${{ matrix.dotnet }} == '6.0.x' && ${{ matrix.os }} == 'ubuntu-latest'
+      run: |
+        dotnet build --configuration Release --nologo --verbosity quiet
+    - name: Upload Artifact
+      if: ${{ matrix.dotnet }} == '6.0.x' && ${{ matrix.os }} == 'ubuntu-latest'
+      uses: actions/upload-artifact@v3
+      with:
+        name: artifacts
+        path: ./{src,tests}/${{ env.PROJECT_NAME }}{,.Tests}/bin/Release/*/*.dll
     - name: Build
+      if: ${{ matrix.dotnet }} != '6.0.x' || ${{ matrix.os }} != 'ubuntu-latest'
       run: |
         dotnet build --configuration Release --nologo --verbosity quiet src/${{ env.PROJECT_NAME }}/${{ env.PROJECT_NAME }}.fsproj
 
@@ -36,12 +47,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup .NET Core
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v2
         with:
           dotnet-version: 6.0.201
+      - name: Download Artifacts
+        uses: actions/download-artifacts@v3
+        with:
+          name: artifacts
       - name: Test
         run: |
-          dotnet test --configuration Release --nologo --verbosity normal --results-directory coverage --collect:"XPlat Code Coverage" --settings coverlet.runsettings
+          dotnet test --configuration Release --no-build --nologo --verbosity normal --results-directory coverage --collect:"XPlat Code Coverage" --settings coverlet.runsettings
           mv coverage/*/coverage.info coverage/lcov.info
       - name: Coveralls
         uses: coverallsapp/github-action@master
