@@ -27,7 +27,9 @@ jobs:
       with:
         dotnet-version: ${{ matrix.dotnet }}
     - name: Build
-      run: dotnet build --configuration Release --nologo --verbosity quiet src/${PROJECT_NAME}/${PROJECT_NAME}.fsproj
+      run: |
+        cd src
+        dotnet build --configuration Release --nologo --verbosity quiet
 
   test:
     needs: build
