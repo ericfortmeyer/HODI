@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Authors>Eric Fortmeyer</Authors>
     <Description>A set of functions used to inject dependencies into HTTP handlers in F# web applications.</Description>
@@ -14,9 +14,7 @@
     <SignAssembly>false</SignAssembly>
     <PackageIcon>hodi.png</PackageIcon>
     <Version>1.2.2</Version>
-    <PackageReleaseNotes>Functions now throw InvalidOperationException if a requested type does not exist.
-Reducing the number of calls to IServiceProvider::get_RequestServices.
-Minor refactoring.</PackageReleaseNotes>
+    <PackageReleaseNotes>Update target framework.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
