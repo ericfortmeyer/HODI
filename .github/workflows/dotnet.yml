@@ -36,7 +36,8 @@ jobs:
     steps:
     - name: Test
       run: |
-        dotnet test --nologo --no-build --verbosity normal -r coverage --collect:"XPlat Code Coverage" --settings:"coverlet.runsettings"
+        ls -lah
+        dotnet test --nologo --no-build --verbosity normal -r coverage --collect:"XPlat Code Coverage" --settings:"coverlet.runsettings" tests/HODI.Tests/HODI.Tests.fsproj
         mv coverage/*/coverage.info coverage/lcov.info
     - name: Coveralls
       uses: coverallsapp/github-action@master
