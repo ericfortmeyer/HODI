@@ -41,7 +41,7 @@ jobs:
           dotnet-version: 6.0.201
       - name: Test
         run: |
-          dotnet test --configuration Release --nologo --no-build --verbosity normal --results-directory coverage --collect:"XPlat Code Coverage" --settings:"coverlet.runsettings"
+          dotnet test --configuration Release --nologo --no-build --verbosity normal --results-directory coverage --collect:"XPlat Code Coverage" --settings coverlet.runsettings
           ls -lah coverage
       - name: Coveralls
         uses: coverallsapp/github-action@master
