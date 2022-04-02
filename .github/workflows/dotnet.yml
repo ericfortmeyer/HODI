@@ -27,10 +27,10 @@ jobs:
       with:
         dotnet-version: ${{ matrix.dotnet }}
     - name: Build *nix
-      if: ${{ matrix.os }} != 'windows*'
+      if: ${{ matrix.os }} != 'windows-latest'
       run: dotnet build --configuration Release --nologo --verbosity quiet src/${PROJECT_NAME}/${PROJECT_NAME}.fsproj
     - name: Build Windows
-      if: ${{ matrix.os }} == 'windows*'
+      if: ${{ matrix.os }} == 'windows-latest'
       run: dotnet build --configuration Release --nologo --verbosity quiet .\src\$env:PROJECT_NAME\$env:PROJECT_NAME.fsproj
 
   test:
