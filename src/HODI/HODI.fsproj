@@ -13,7 +13,7 @@
     <PackageTags>F#, FSharp, dependency injection, giraffe</PackageTags>
     <SignAssembly>false</SignAssembly>
     <PackageIcon>hodi.png</PackageIcon>
-    <Version>1.2.3</Version>
+    <Version>1.2.4</Version>
     <PackageReleaseNotes>Update target framework.</PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
