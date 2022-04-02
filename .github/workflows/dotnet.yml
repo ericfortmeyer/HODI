@@ -14,10 +14,12 @@ env:
   DOTNET_NOLOGO: true
   PROJECT_NAME: HODI
 jobs:
+  build:
+    uses: ericfortmeyer/${{ env.PROJECT_NAME }}/.github/workflows/release_build.yml@v1  
   test:
     runs-on: ubuntu-latest
+    needs: build
     steps:
-      - uses: ericfortmeyer/${{ env.PROJECT_NAME }}/.github/workflows/release_build.yml@v1
       - name: Test
         run: |
           dotnet test --configuration Release --nologo --verbosity normal --results-directory coverage --collect:"XPlat Code Coverage" --settings coverlet.runsettings
