@@ -1,49 +1,23 @@
-name: .NET
+name: Test Project
 on:
-  push:
   pull_request:
-  release:
-    types: [ published ]
+    branches:
+      - main
+    paths:
+      - '!*.md'
+      - '!*.git*'
+      - '!*config*'
+      - '!*.png'
 env:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
   DOTNET_NOLOGO: true
   PROJECT_NAME: HODI
-  NUGET_FEED: https://api.nuget.org/v3/index.json
-  NUGET_KEY: ${{ secrets.NUGET_KEY }}
 jobs:
-  build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ ubuntu-latest, windows-latest, macos-latest ]
-        dotnet: [ '6.0.x', '5.0.x' ]
-
-    name: Dotnet ${{ matrix.dotnet }} ${{ matrix.os }} Runner
-    steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v2
-      with:
-        dotnet-version: ${{ matrix.dotnet }}
-    - name: Build Latest
-      if: matrix.dotnet == '6.0.x' && matrix.os == 'ubuntu-latest'
-      run: |
-        dotnet build --configuration Release --nologo --verbosity quiet
-    - name: Build
-      if: matrix.dotnet != '6.0.x' || matrix.os != 'ubuntu-latest'
-      run: |
-        dotnet build --configuration Release --nologo --verbosity quiet src/${{ env.PROJECT_NAME }}/${{ env.PROJECT_NAME }}.fsproj
-
   test:
-    needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup .NET Core
-        uses: actions/setup-dotnet@v2
-        with:
-          dotnet-version: 6.0.201
+      - uses: ericfortmeyer/${{ env.PROJECT_NAME }}/.github/workflows/release_build.yml@v1
       - name: Test
         run: |
           dotnet test --configuration Release --nologo --verbosity normal --results-directory coverage --collect:"XPlat Code Coverage" --settings coverlet.runsettings
@@ -52,18 +26,3 @@ jobs:
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-  deploy:
-    needs: build
-    if: github.event_name == 'release'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup .NET Core
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 6.0.201
-      - name: Create Release NuGet package
-        run: |
-          dotnet pack --verbosity normal --configuration Release --include-source -o nupkg src/$PROJECT_NAME/$PROJECT_NAME.*proj
-      - name: Push to NuGet Feed
-        run: dotnet nuget push ./nupkg/*.nupkg --source $NUGET_FEED --skip-duplicate --api-key $NUGET_KEY
