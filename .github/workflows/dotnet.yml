@@ -34,8 +34,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Test
-      with:
-        dotnet-version: 6.0.201
       run: |
         dotnet test --configuration Release --nologo --no-build --verbosity normal -r coverage - --collect:"XPlat Code Coverage" --settings:"coverlet.runsettings"
         mv coverage/*/coverage.info coverage/lcov.info
