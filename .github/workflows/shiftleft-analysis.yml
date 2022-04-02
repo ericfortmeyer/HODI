@@ -6,12 +6,8 @@ name: SL Scan
 on:
   push:
     branches: [ main ]
-  pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ main ]
-  schedule:
-    - cron: '33 13 * * 3'
-
+    paths:
+      - '*/*/*.fsproj'
 jobs:
   Scan-Build:
     # Scan runs on ubuntu, mac and windows
