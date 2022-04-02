@@ -27,17 +27,17 @@ jobs:
       with:
         dotnet-version: ${{ matrix.dotnet }}
     - name: Build Latest
-      if: ${{ matrix.dotnet }} == '6.0.x' && ${{ matrix.os }} == 'ubuntu-latest'
+      if: matrix.dotnet == '6.0.x' && matrix.os == 'ubuntu-latest'
       run: |
         dotnet build --configuration Release --nologo --verbosity quiet
     - name: Upload Artifact
-      if: ${{ matrix.dotnet }} == '6.0.x' && ${{ matrix.os }} == 'ubuntu-latest'
+      if: matrix.dotnet == '6.0.x' && matrix.os == 'ubuntu-latest'
       uses: actions/upload-artifact@v3
       with:
         name: artifacts
         path: ./{src,tests}/${{ env.PROJECT_NAME }}{,.Tests}/bin/Release/*/*.dll
     - name: Build
-      if: ${{ matrix.dotnet }} != '6.0.x' || ${{ matrix.os }} != 'ubuntu-latest'
+      if: matrix.dotnet != '6.0.x' || matrix.os != 'ubuntu-latest'
       run: |
         dotnet build --configuration Release --nologo --verbosity quiet src/${{ env.PROJECT_NAME }}/${{ env.PROJECT_NAME }}.fsproj
 
