@@ -1,58 +1,60 @@
 name: .NET
-
 on:
   push:
-    branches: [ main ]
   pull_request:
-    branches: [ main ]
   release:
     types: [ published ]
-
 env:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
+  DOTNET_NOLOGO: true
   PROJECT_NAME: HODI
   NUGET_FEED: https://api.nuget.org/v3/index.json
   NUGET_KEY: ${{ secrets.NUGET_KEY }}
-
 jobs:
   build:
-
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [ ubuntu-latest, windows-latest, macos-latest ]
+        dotnet: [ '6.0.x', '5.0.x' ]
 
+    name: Dotnet ${{ matrix.dotnet }} Runner
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.x
+        dotnet-version: ${{ matrix.dotnet }}
     - name: Build
-      run: dotnet build --nologo -v quiet
+      run: dotnet build --configuration Release --nologo --verbosity quiet
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
     - name: Test
+      with:
+        dotnet-version: 6.0.201
       run: |
-        dotnet test --nologo --no-build --verbosity normal -r coverage - --collect:"XPlat Code Coverage" --settings:"coverlet.runsettings"
+        dotnet test --configuration Release --nologo --no-build --verbosity normal -r coverage - --collect:"XPlat Code Coverage" --settings:"coverlet.runsettings"
         mv coverage/*/coverage.info coverage/lcov.info
     - name: Coveralls
       uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-
   deploy:
     needs: build
     if: github.event_name == 'release'
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 5.0.401
+          dotnet-version: 6.0.201
       - name: Create Release NuGet package
         run: |
-          dotnet pack -v normal -c Release --include-source -o nupkg src/$PROJECT_NAME/$PROJECT_NAME.*proj
+          dotnet pack --verbosity normal --configuration Release --include-source -o nupkg src/$PROJECT_NAME/$PROJECT_NAME.*proj
       - name: Push to NuGet Feed
         run: dotnet nuget push ./nupkg/*.nupkg --source $NUGET_FEED --skip-duplicate --api-key $NUGET_KEY
