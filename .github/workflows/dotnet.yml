@@ -35,7 +35,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: artifacts
-        path: ./{src,tests}/${{ env.PROJECT_NAME }}{,.Tests}/bin/Release/*/*.dll
+        path: ./*/*/bin/Release/*/*.dll
     - name: Build
       if: matrix.dotnet != '6.0.x' || matrix.os != 'ubuntu-latest'
       run: |
@@ -45,13 +45,13 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: 6.0.201
       - name: Download Artifacts
-        uses: actions/download-artifacts@v3
+        uses: actions/download-artifact@v3
         with:
           name: artifacts
       - name: Test
