@@ -1,4 +1,4 @@
-name: .NET
+name: Test Builds for Multiple Targets
 on:
   push:
     paths:
@@ -11,8 +11,6 @@ env:
   DOTNET_CLI_TELEMETRY_OPTOUT: true
   DOTNET_NOLOGO: true
   PROJECT_NAME: HODI
-  NUGET_FEED: https://api.nuget.org/v3/index.json
-  NUGET_KEY: ${{ secrets.NUGET_KEY }}
 jobs:
   build:
     runs-on: ${{ matrix.os }}
