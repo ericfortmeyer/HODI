@@ -21,7 +21,6 @@
 
   <ItemGroup>
     <Compile Include="DependencyInjection.fs" />
-    <Compile Include="Giraffe\DependencyInjection.fs" />
   </ItemGroup>
 
   <ItemGroup>
