@@ -306,3 +306,61 @@ module DependencyInjection =
         let dep4 = services.GetRequiredService<'Dep4>()
 
         handler model dep0 dep1 dep2 dep3 dep4 next ctx
+
+    /// <summary>
+    /// Passes given value (e.g. the result of a <see cref="routef" /> or <see cref="bindForm" />) along with 6 dependencies and provides them to the supplied handler.
+    /// </summary>
+    /// <exception cref="System.InvalidOperationException">
+    /// There is no service of requested type
+    /// </exception>
+    let inject6Plus (handler : 'T -> 'Dep0 -> 'Dep1 -> 'Dep2 -> 'Dep3 -> 'Dep4 -> 'Dep5 -> (HttpContext -> Task<HttpContext option>) -> (HttpContext -> Task<HttpContext option>))
+                    (model : 'T)
+                    (next : HttpContext -> Task<HttpContext option>)
+                    (ctx : HttpContext)
+                    : Task<HttpContext option> =
+
+        let services = ctx.RequestServices
+
+        let dep0 = services.GetRequiredService<'Dep0>()
+
+        let dep1 = services.GetRequiredService<'Dep1>()
+
+        let dep2 = services.GetRequiredService<'Dep2>()
+
+        let dep3 = services.GetRequiredService<'Dep3>()
+
+        let dep4 = services.GetRequiredService<'Dep4>()
+
+        let dep5 = services.GetRequiredService<'Dep5>()
+
+        handler model dep0 dep1 dep2 dep3 dep4 dep5 next ctx
+
+    /// <summary>
+    /// Passes given value (e.g. the result of a <see cref="routef" /> or <see cref="bindForm" />) along with 7 dependencies and provides them to the supplied handler.
+    /// </summary>
+    /// <exception cref="System.InvalidOperationException">
+    /// There is no service of requested type
+    /// </exception>
+    let inject7Plus (handler : 'T -> 'Dep0 -> 'Dep1 -> 'Dep2 -> 'Dep3 -> 'Dep4 -> 'Dep5 -> 'Dep6 -> (HttpContext -> Task<HttpContext option>) -> (HttpContext -> Task<HttpContext option>))
+                    (model : 'T)
+                    (next : HttpContext -> Task<HttpContext option>)
+                    (ctx : HttpContext)
+                    : Task<HttpContext option> =
+
+        let services = ctx.RequestServices
+
+        let dep0 = services.GetRequiredService<'Dep0>()
+
+        let dep1 = services.GetRequiredService<'Dep1>()
+
+        let dep2 = services.GetRequiredService<'Dep2>()
+
+        let dep3 = services.GetRequiredService<'Dep3>()
+
+        let dep4 = services.GetRequiredService<'Dep4>()
+
+        let dep5 = services.GetRequiredService<'Dep5>()
+
+        let dep6 = services.GetRequiredService<'Dep6>()
+
+        handler model dep0 dep1 dep2 dep3 dep4 dep5 dep6 next ctx
