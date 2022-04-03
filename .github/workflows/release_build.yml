@@ -25,7 +25,6 @@ jobs:
     - name: Create Release NuGet package
       run: |
         dotnet pack --no-build --nologo --verbosity normal --configuration Release --output nupkg src/$PROJECT_NAME/$PROJECT_NAME.*proj
-        ls
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3
       with:
