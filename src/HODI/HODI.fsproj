@@ -13,7 +13,7 @@
     <PackageTags>F#, FSharp, dependency injection, giraffe</PackageTags>
     <SignAssembly>false</SignAssembly>
     <PackageIcon>hodi.png</PackageIcon>
-    <Version>1.2.5</Version>
+    <Version>2.0.0</Version>
     <PackageReleaseNotes>Create more injectors</PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageProjectUrl>https://github.com/ericfortmeyer/HODI</PackageProjectUrl>
