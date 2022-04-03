@@ -345,3 +345,69 @@ let ``The inject5Plus function should get 5 dependencies from the service contai
 
     systemUnderTest givenHandler givenAdditionalArgument next serviceContainer
     |> ignore
+
+[<Test>]
+[<TestCase("This is a string")>]
+let ``The inject6Plus function should get 6 dependencies from the service container and pass them and another arguments to the given handler`` givenAdditionalArgument
+                                                                                                                                              =
+    let systemUnderTest = inject6Plus
+
+    let givenHandler =
+        fun (addl : string) (dep : FakeDependency0) (dep2 : FakeDependency1) (dep3 : FakeDependency2) (dep4 : FakeDependency3) (dep5 : FakeDependency4) (dep6 : FakeDependency5) next (ctx : HttpContext) ->
+            Assert.AreEqual(givenAdditionalArgument, addl)
+            dep.AssertCreated()
+            dep2.AssertCreated()
+            dep3.AssertCreated()
+            dep4.AssertCreated()
+            dep5.AssertCreated()
+            dep6.AssertCreated()
+            next ctx
+
+    let serviceContainer = Substitute.For<HttpContext>()
+
+    let services = ServiceCollection()
+    services.AddTransient<FakeDependency0>() |> ignore
+    services.AddTransient<FakeDependency1>() |> ignore
+    services.AddTransient<FakeDependency2>() |> ignore
+    services.AddTransient<FakeDependency3>() |> ignore
+    services.AddTransient<FakeDependency4>() |> ignore
+    services.AddTransient<FakeDependency5>() |> ignore
+    let provider = services.BuildServiceProvider()
+    serviceContainer.RequestServices <- provider
+
+    systemUnderTest givenHandler givenAdditionalArgument next serviceContainer
+    |> ignore
+
+[<Test>]
+[<TestCase("This is a string")>]
+let ``The inject7Plus function should get 7 dependencies from the service container and pass them and another arguments to the given handler`` givenAdditionalArgument
+                                                                                                                                              =
+    let systemUnderTest = inject7Plus
+
+    let givenHandler =
+        fun (addl : string) (dep : FakeDependency0) (dep2 : FakeDependency1) (dep3 : FakeDependency2) (dep4 : FakeDependency3) (dep5 : FakeDependency4) (dep6 : FakeDependency5) (dep7 : FakeDependency6) next (ctx : HttpContext) ->
+            Assert.AreEqual(givenAdditionalArgument, addl)
+            dep.AssertCreated()
+            dep2.AssertCreated()
+            dep3.AssertCreated()
+            dep4.AssertCreated()
+            dep5.AssertCreated()
+            dep6.AssertCreated()
+            dep7.AssertCreated()
+            next ctx
+
+    let serviceContainer = Substitute.For<HttpContext>()
+
+    let services = ServiceCollection()
+    services.AddTransient<FakeDependency0>() |> ignore
+    services.AddTransient<FakeDependency1>() |> ignore
+    services.AddTransient<FakeDependency2>() |> ignore
+    services.AddTransient<FakeDependency3>() |> ignore
+    services.AddTransient<FakeDependency4>() |> ignore
+    services.AddTransient<FakeDependency5>() |> ignore
+    services.AddTransient<FakeDependency6>() |> ignore
+    let provider = services.BuildServiceProvider()
+    serviceContainer.RequestServices <- provider
+
+    systemUnderTest givenHandler givenAdditionalArgument next serviceContainer
+    |> ignore
