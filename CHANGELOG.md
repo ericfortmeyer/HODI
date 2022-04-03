@@ -1,3 +1,7 @@
+# 2.0.0 (Apr 3 2022)
+
+- Add more functions
+
 # 1.2.5 (Apr 2 2022)
 
 ## Feature
