@@ -12,6 +12,9 @@ open NUnit.Framework
 
 type HttpFunc = HttpContext -> Task<HttpContext option>
 
+[<Literal>]
+let TestString = "THIS IS A TEST STRING"
+
 let next = Substitute.For<HttpFunc>()
 
 type TestDependency() =
@@ -216,7 +219,7 @@ let ``The inject7 function should get 7 dependencies from the service container 
     |> ignore
 
 [<Test>]
-[<TestCase("This is a string")>]
+[<TestCase(TestString)>]
 let ``The injectPlus function should get a dependency from the service container and pass them and an additional argument to the given handler`` givenAdditionalArgument
                                                                                                                                                  =
     let systemUnderTest = injectPlus
@@ -239,7 +242,7 @@ let ``The injectPlus function should get a dependency from the service container
 
 
 [<Test>]
-[<TestCase("This is a string")>]
+[<TestCase(TestString)>]
 let ``The inject2Plus function should get 2 dependencies from the service container and pass it and an additional argument to the given handler`` givenAdditionalArgument
                                                                                                                                                  =
     let systemUnderTest = inject2Plus
@@ -263,7 +266,7 @@ let ``The inject2Plus function should get 2 dependencies from the service contai
     |> ignore
 
 [<Test>]
-[<TestCase("This is a string")>]
+[<TestCase(TestString)>]
 let ``The inject3Plus function should get 3 dependencies from the service container and pass them and another argument to the given handler`` givenAdditionalArgument
                                                                                                                                              =
     let systemUnderTest = inject3Plus
@@ -289,7 +292,7 @@ let ``The inject3Plus function should get 3 dependencies from the service contai
     |> ignore
 
 [<Test>]
-[<TestCase("This is a string")>]
+[<TestCase(TestString)>]
 let ``The inject4Plus function should get 4 dependencies from the service container and pass them and another argument to the given handler`` givenAdditionalArgument
                                                                                                                                              =
     let systemUnderTest = inject4Plus
@@ -317,7 +320,7 @@ let ``The inject4Plus function should get 4 dependencies from the service contai
     |> ignore
 
 [<Test>]
-[<TestCase("This is a string")>]
+[<TestCase(TestString)>]
 let ``The inject5Plus function should get 5 dependencies from the service container and pass them and another arguments to the given handler`` givenAdditionalArgument
                                                                                                                                               =
     let systemUnderTest = inject5Plus
@@ -347,7 +350,7 @@ let ``The inject5Plus function should get 5 dependencies from the service contai
     |> ignore
 
 [<Test>]
-[<TestCase("This is a string")>]
+[<TestCase(TestString)>]
 let ``The inject6Plus function should get 6 dependencies from the service container and pass them and another arguments to the given handler`` givenAdditionalArgument
                                                                                                                                               =
     let systemUnderTest = inject6Plus
@@ -379,7 +382,7 @@ let ``The inject6Plus function should get 6 dependencies from the service contai
     |> ignore
 
 [<Test>]
-[<TestCase("This is a string")>]
+[<TestCase(TestString)>]
 let ``The inject7Plus function should get 7 dependencies from the service container and pass them and another arguments to the given handler`` givenAdditionalArgument
                                                                                                                                               =
     let systemUnderTest = inject7Plus
