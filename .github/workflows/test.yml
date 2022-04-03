@@ -1,0 +1,29 @@
+name: Test Project
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '!*.md'
+      - '!*.git*'
+      - '!*config*'
+      - '!*.png'
+env:
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+  DOTNET_NOLOGO: true
+jobs:
+  build:
+    uses: ./.github/workflows/release_build.yml
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Test
+        run: |
+          dotnet test --configuration Release --nologo --verbosity normal --results-directory coverage --collect:"XPlat Code Coverage" --settings coverlet.runsettings
+          mv coverage/*/coverage.info coverage/lcov.info
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
