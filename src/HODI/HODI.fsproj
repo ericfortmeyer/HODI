@@ -5,7 +5,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Authors>Eric Fortmeyer</Authors>
     <Description>A set of functions used to inject dependencies into HTTP handlers in F# web applications.</Description>
-    <Copyright>Copyright (c) Eric Fortmeyer 2021</Copyright>
+    <Copyright>Copyright (c) Eric Fortmeyer 2022</Copyright>
 	<PackageId>HODI</PackageId>
 	<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
 	<RepositoryType>git</RepositoryType>
@@ -13,9 +13,10 @@
     <PackageTags>F#, FSharp, dependency injection, giraffe</PackageTags>
     <SignAssembly>false</SignAssembly>
     <PackageIcon>hodi.png</PackageIcon>
-    <Version>1.2.3</Version>
-    <PackageReleaseNotes>Update target framework.</PackageReleaseNotes>
+    <Version>1.2.5</Version>
+    <PackageReleaseNotes>Create more injectors</PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/ericfortmeyer/HODI</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="FSharp.Core" Version="6.0.0" />
+    <PackageReference Update="FSharp.Core" Version="6.0.3" />
   </ItemGroup>
 
   <ItemGroup>
