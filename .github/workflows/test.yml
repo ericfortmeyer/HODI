@@ -1,7 +1,7 @@
 name: Test Project
 on:
   pull_request:
-    types: [opened]
+    types: [opened, closed]
     paths:
       - '**.fs'
       - '.github/workflows/test.yml'
@@ -27,3 +27,15 @@ jobs:
         with:
           name: coverage-results
           path: coverage/lcov.info
+  publish:
+    needs: test
+    runs-on: ubuntu-latest
+    if: ${{ github.event.action == 'closed' }}
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: coverage-results
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
