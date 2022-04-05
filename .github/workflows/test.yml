@@ -1,6 +1,7 @@
 name: Test Project
 on:
   pull_request:
+    types: [opened]
     paths:
       - '**.fs'
 env:
