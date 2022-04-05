@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - '**.fs'
-      - '.github/workflows/multiple_build.yml'
+      - '.github/workflows/multiple_builds.yml'
       - '**/packages.lock.json'
   push:
     paths:
@@ -41,7 +41,7 @@ jobs:
         dotnet-version: ${{ matrix.dotnet }}
     - name: Restore Dependencies
       run: |
-        dotnet restore
+        dotnet restore src/${{ env.PROJECT_NAME }}
     - name: Build
       run: |
         dotnet build --no-restore --configuration Release --verbosity quiet src/${{ env.PROJECT_NAME }}
