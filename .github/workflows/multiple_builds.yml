@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - '**.fs'
-      - '.github/workflows/multiple_build.yml'
+      - '.github/workflows/multiple_builds.yml'
       - '**/packages.lock.json'
   push:
     paths:
