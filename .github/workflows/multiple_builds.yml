@@ -17,7 +17,6 @@ env:
   DOTNET_NOLOGO: true
   PROJECT_NAME: HODI
   TARGET_FRAMEWORK: 'netstandard2.1'
-  ARTIFACT_PATH: src/${{ env.PROJECT_NAME }}/bin/Release/${{ env.TARGET_FRAMEWORK }}
   RELEASE_OS: 'ubuntu-latest'
   RELEASE_DOTNET_VERSION: '6.0.X'
 jobs:
@@ -51,4 +50,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: release-build
-        path: ${{ env.ARTIFACT_PATH }}
+        path: src/${{ env.PROJECT_NAME }}/bin/Release/${{ env.TARGET_FRAMEWORK }}
