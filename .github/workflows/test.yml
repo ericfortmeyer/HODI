@@ -22,7 +22,8 @@ jobs:
         run: |
           dotnet test --configuration Release --nologo --verbosity normal --results-directory coverage --collect:"XPlat Code Coverage" --settings coverlet.runsettings
           mv coverage/*/coverage.info coverage/lcov.info
-      - name: Coveralls
-        uses: coverallsapp/github-action@master
+      - name: Upload Coverage
+        uses: actions/upload-artifact@v3
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          name: coverage-results
+          path: coverage/lcov.info
