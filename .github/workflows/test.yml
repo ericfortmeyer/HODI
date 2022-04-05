@@ -2,8 +2,11 @@ name: Test Project
 on:
   pull_request:
     types: [opened]
+    branches:
+      - main
     paths:
       - '**.fs'
+      - '.github/workflows/test.yml'
 env:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
