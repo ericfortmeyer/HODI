@@ -10,7 +10,8 @@ The purpose of this library is to make unit testing of functions used as HTTP ha
 
 [![NuGet Info](https://buildstats.info/nuget/HODI?includePreReleases=true)](https://www.nuget.org/packages/HODI/)
 
-[![Build](https://github.com/ericfortmeyer/HODI/actions/workflows/multple_builds.yml/badge.svg)](https://github.com/ericfortmeyer/HODI/actions/workflows/multple_builds.yml) [![Coverage Status](https://coveralls.io/repos/github/ericfortmeyer/HODI/badge.svg?branch=main)](https://coveralls.io/github/ericfortmeyer/HODI?branch=main)
+[![Build](https://github.com/ericfortmeyer/HODI/actions/workflows/multiple_builds.yml/badge.svg)](https://github.com/ericfortmeyer/HODI/actions/workflows/multiple_builds.yml)
+[![Coverage Status](https://coveralls.io/repos/github/ericfortmeyer/HODI/badge.svg?branch=main)](https://coveralls.io/github/ericfortmeyer/HODI?branch=main)
 
 ## Install
 
