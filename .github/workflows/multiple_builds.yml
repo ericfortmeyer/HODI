@@ -1,16 +1,25 @@
 name: Test Builds for Multiple Targets
 on:
+  pull_request:
+    types: [opened]
+    branches:
+      - main
+    paths:
+      - '**.fs'
+      - '.github/workflows/multiple_build.yml'
+      - '**/packages.lock.json'
   push:
     paths:
-      - '!*.md'
-      - '!*.git*'
-      - '!*config*'
-      - '!*.png'
+      - '**.fs'
 env:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
   DOTNET_NOLOGO: true
   PROJECT_NAME: HODI
+  TARGET_FRAMEWORK: 'netstandard2.1'
+  ARTIFACT_PATH: src/${{ env.PROJECT_NAME }}/bin/Release/${{ env.TARGET_FRAMEWORK }}
+  RELEASE_OS: 'ubuntu-latest'
+  RELEASE_DOTNET_VERSION: '6.0.X'
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -21,15 +30,25 @@ jobs:
     name: Dotnet ${{ matrix.dotnet }} ${{ matrix.os }} Runner
     steps:
     - uses: actions/checkout@v3
+    - uses: actions/cache@v3
+      with:
+        path: ~/.nuget/packages
+        key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-nuget-
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: ${{ matrix.dotnet }}
-    - name: Build Latest
-      if: matrix.dotnet == '6.0.x' && matrix.os == 'ubuntu-latest'
+    - name: Restore Dependencies
       run: |
-        dotnet build --configuration Release --nologo --verbosity quiet
+        dotnet restore
     - name: Build
-      if: matrix.dotnet != '6.0.x' || matrix.os != 'ubuntu-latest'
       run: |
-        dotnet build --configuration Release --nologo --verbosity quiet src/${{ env.PROJECT_NAME }}/${{ env.PROJECT_NAME }}.fsproj
+        dotnet build --no-restore --configuration Release --verbosity quiet src/${{ env.PROJECT_NAME }}
+    - name: Upload Artifact
+      if: matrix.dotnet == ${{ env.RELEASE_DOTNET_VERSION }} && matrix.os == ${{ env.RELEASE_OS }}
+      uses: actions/upload-artifact@v3
+      with:
+        name: release-build
+        path: ${{ env.ARTIFACT_PATH }}
