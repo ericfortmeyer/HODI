@@ -42,3 +42,4 @@ jobs:
           git-branch: main
           path-to-lcov: ./lcov.info
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel-finished: true
