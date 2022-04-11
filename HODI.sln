@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31129.286
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "HODI.Tests", "tests\HODI.Tests\HODI.Tests.fsproj", "{63E7D15D-416A-484A-9036-E1BEC20A22D3}"
 EndProject
@@ -12,11 +12,17 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{33A3D58B-24E5-41AA-93AE-39337B728AB0}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		.github\workflows\coverage.yml = .github\workflows\coverage.yml
 		coverlet.runsettings = coverlet.runsettings
 		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
 		LICENSE = LICENSE
+		.github\workflows\multiple_builds.yml = .github\workflows\multiple_builds.yml
 		nuget.config = nuget.config
+		.github\workflows\publish.yml = .github\workflows\publish.yml
 		README.md = README.md
+		.github\workflows\release_build.yml = .github\workflows\release_build.yml
+		.github\workflows\shiftleft-analysis.yml = .github\workflows\shiftleft-analysis.yml
+		.github\workflows\test.yml = .github\workflows\test.yml
 	EndProjectSection
 EndProject
 Global
