@@ -210,8 +210,9 @@ module DependencyInjection =
                              (ctx : HttpContext)
                              : Task<HttpContext option> =
 
-        let dep =
-            ctx.RequestServices.GetRequiredService<'Dep>()
+        let services = ctx.RequestServices
+
+        let dep = services.GetRequiredService<'Dep>()
 
         handler model dep next ctx
 
