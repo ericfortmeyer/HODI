@@ -5,8 +5,7 @@
             <DataCollector friendlyName="XPlat code coverage">
                 <Configuration>
                     <Format>lcov</Format>
-                    <Exclude>[*]Giraffe.*,[HODI.Tests]*,</Exclude>
-                    <ExcludeByFile>**/HODI/Giraffe/*.fs</ExcludeByFile>
+                    <Exclude>[HODI.Tests]*,</Exclude>
                     <SingleHit>false</SingleHit>
                     <UseSourceLink>true</UseSourceLink>
                     <IncludeTestAssembly>true</IncludeTestAssembly>
