@@ -45,9 +45,3 @@ jobs:
     - name: Build
       run: |
         dotnet build --no-restore --configuration Release --verbosity quiet src/${{ env.PROJECT_NAME }}
-    - name: Upload Artifact
-      if: matrix.dotnet == ${{ env.RELEASE_DOTNET_VERSION }} && matrix.os == ${{ env.RELEASE_OS }}
-      uses: actions/upload-artifact@v3
-      with:
-        name: release-build
-        path: src/${{ env.PROJECT_NAME }}/bin/Release/${{ env.TARGET_FRAMEWORK }}
