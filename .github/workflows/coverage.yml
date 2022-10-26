@@ -18,7 +18,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v2
         with:
-          dotnet-version: 6.0.201
+          dotnet-version: 6.0.*
       - name: Test
         run: |
           dotnet test --verbosity normal --results-directory coverage --collect:"XPlat Code Coverage" --settings coverlet.runsettings

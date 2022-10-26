@@ -21,7 +21,7 @@ jobs:
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 6.0.201
+          dotnet-version: 6.0.*
       - name: Download Artifact
         uses: actions/download-artifact@v3
         with:
