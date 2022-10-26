@@ -50,11 +50,11 @@ let ``The inject function should get a dependency from the service container and
             dep.AssertCreated()
             next ctx
 
-    let serviceContainer = Substitute.For<HttpContext>()
+    let serviceContainer: HttpContext = Substitute.For<HttpContext>()
 
-    let services = ServiceCollection()
+    let services: ServiceCollection = ServiceCollection()
     services.AddTransient<FakeDependency0>() |> ignore
-    let provider = services.BuildServiceProvider()
+    let provider: ServiceProvider = services.BuildServiceProvider()
     serviceContainer.RequestServices <- provider
 
     systemUnderTest givenHandler next serviceContainer
@@ -71,12 +71,12 @@ let ``The inject2 function should get 2 dependencies from the service container 
             dep2.AssertCreated()
             next ctx
 
-    let serviceContainer = Substitute.For<HttpContext>()
+    let serviceContainer: HttpContext = Substitute.For<HttpContext>()
 
-    let services = ServiceCollection()
+    let services: ServiceCollection = ServiceCollection()
     services.AddTransient<FakeDependency0>() |> ignore
     services.AddTransient<FakeDependency1>() |> ignore
-    let provider = services.BuildServiceProvider()
+    let provider: ServiceProvider = services.BuildServiceProvider()
     serviceContainer.RequestServices <- provider
 
     systemUnderTest givenHandler next serviceContainer
@@ -93,13 +93,13 @@ let ``The inject3 function should get 3 dependencies from the service container 
             dep3.AssertCreated()
             next ctx
 
-    let serviceContainer = Substitute.For<HttpContext>()
+    let serviceContainer: HttpContext = Substitute.For<HttpContext>()
 
-    let services = ServiceCollection()
+    let services: ServiceCollection = ServiceCollection()
     services.AddTransient<FakeDependency0>() |> ignore
     services.AddTransient<FakeDependency1>() |> ignore
     services.AddTransient<FakeDependency2>() |> ignore
-    let provider = services.BuildServiceProvider()
+    let provider: ServiceProvider = services.BuildServiceProvider()
     serviceContainer.RequestServices <- provider
 
     systemUnderTest givenHandler next serviceContainer
@@ -117,14 +117,14 @@ let ``The inject4 function should get 4 dependencies from the service container 
             dep4.AssertCreated()
             next ctx
 
-    let serviceContainer = Substitute.For<HttpContext>()
+    let serviceContainer: HttpContext = Substitute.For<HttpContext>()
 
-    let services = ServiceCollection()
+    let services: ServiceCollection = ServiceCollection()
     services.AddTransient<FakeDependency0>() |> ignore
     services.AddTransient<FakeDependency1>() |> ignore
     services.AddTransient<FakeDependency2>() |> ignore
     services.AddTransient<FakeDependency3>() |> ignore
-    let provider = services.BuildServiceProvider()
+    let provider: ServiceProvider = services.BuildServiceProvider()
     serviceContainer.RequestServices <- provider
 
     systemUnderTest givenHandler next serviceContainer
@@ -143,15 +143,15 @@ let ``The inject5 function should get 5 dependencies from the service container 
             dep5.AssertCreated()
             next ctx
 
-    let serviceContainer = Substitute.For<HttpContext>()
+    let serviceContainer: HttpContext = Substitute.For<HttpContext>()
 
-    let services = ServiceCollection()
+    let services: ServiceCollection = ServiceCollection()
     services.AddTransient<FakeDependency0>() |> ignore
     services.AddTransient<FakeDependency1>() |> ignore
     services.AddTransient<FakeDependency2>() |> ignore
     services.AddTransient<FakeDependency3>() |> ignore
     services.AddTransient<FakeDependency4>() |> ignore
-    let provider = services.BuildServiceProvider()
+    let provider: ServiceProvider = services.BuildServiceProvider()
     serviceContainer.RequestServices <- provider
 
     systemUnderTest givenHandler next serviceContainer

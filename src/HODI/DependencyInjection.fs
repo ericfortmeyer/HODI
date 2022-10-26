@@ -24,9 +24,9 @@ module DependencyInjection =
                (ctx : HttpContext)
                : Task<HttpContext option> =
 
-        let services = ctx.RequestServices
+        let services: System.IServiceProvider = ctx.RequestServices
 
-        let dep = services.GetRequiredService<'Dep>()
+        let dep: 'Dep = services.GetRequiredService<'Dep>()
 
         handler dep next ctx
 
@@ -45,11 +45,11 @@ module DependencyInjection =
                 (ctx : HttpContext)
                 : Task<HttpContext option> =
 
-        let services = ctx.RequestServices
+        let services: System.IServiceProvider = ctx.RequestServices
 
-        let dep0 = services.GetRequiredService<'Dep0>()
+        let dep0: 'Dep0 = services.GetRequiredService<'Dep0>()
 
-        let dep1 = services.GetRequiredService<'Dep1>()
+        let dep1: 'Dep1 = services.GetRequiredService<'Dep1>()
 
         handler dep0 dep1 next ctx
 
@@ -68,13 +68,13 @@ module DependencyInjection =
                 (ctx : HttpContext)
                 : Task<HttpContext option> =
 
-        let services = ctx.RequestServices
+        let services: System.IServiceProvider = ctx.RequestServices
 
-        let dep0 = services.GetRequiredService<'Dep0>()
+        let dep0: 'Dep0 = services.GetRequiredService<'Dep0>()
 
-        let dep1 = services.GetRequiredService<'Dep1>()
+        let dep1: 'Dep1 = services.GetRequiredService<'Dep1>()
 
-        let dep2 = services.GetRequiredService<'Dep2>()
+        let dep2: 'Dep2 = services.GetRequiredService<'Dep2>()
 
         handler dep0 dep1 dep2 next ctx
 
@@ -93,15 +93,15 @@ module DependencyInjection =
                 (ctx : HttpContext)
                 : Task<HttpContext option> =
 
-        let services = ctx.RequestServices
+        let services: System.IServiceProvider = ctx.RequestServices
 
-        let dep0 = services.GetRequiredService<'Dep0>()
+        let dep0: 'Dep0 = services.GetRequiredService<'Dep0>()
 
-        let dep1 = services.GetRequiredService<'Dep1>()
+        let dep1: 'Dep1 = services.GetRequiredService<'Dep1>()
 
-        let dep2 = services.GetRequiredService<'Dep2>()
+        let dep2: 'Dep2 = services.GetRequiredService<'Dep2>()
 
-        let dep3 = services.GetRequiredService<'Dep3>()
+        let dep3: 'Dep3 = services.GetRequiredService<'Dep3>()
 
         handler dep0 dep1 dep2 dep3 next ctx
 
@@ -120,17 +120,17 @@ module DependencyInjection =
                 (ctx : HttpContext)
                 : Task<HttpContext option> =
 
-        let services = ctx.RequestServices
+        let services: System.IServiceProvider = ctx.RequestServices
 
-        let dep0 = services.GetRequiredService<'Dep0>()
+        let dep0: 'Dep0 = services.GetRequiredService<'Dep0>()
 
-        let dep1 = services.GetRequiredService<'Dep1>()
+        let dep1: 'Dep1 = services.GetRequiredService<'Dep1>()
 
-        let dep2 = services.GetRequiredService<'Dep2>()
+        let dep2: 'Dep2 = services.GetRequiredService<'Dep2>()
 
-        let dep3 = services.GetRequiredService<'Dep3>()
+        let dep3: 'Dep3 = services.GetRequiredService<'Dep3>()
 
-        let dep4 = services.GetRequiredService<'Dep4>()
+        let dep4: 'Dep4 = services.GetRequiredService<'Dep4>()
 
         handler dep0 dep1 dep2 dep3 dep4 next ctx
 
@@ -149,19 +149,19 @@ module DependencyInjection =
                 (ctx : HttpContext)
                 : Task<HttpContext option> =
 
-        let services = ctx.RequestServices
+        let services: System.IServiceProvider = ctx.RequestServices
 
-        let dep0 = services.GetRequiredService<'Dep0>()
+        let dep0: 'Dep0 = services.GetRequiredService<'Dep0>()
 
-        let dep1 = services.GetRequiredService<'Dep1>()
+        let dep1: 'Dep1 = services.GetRequiredService<'Dep1>()
 
-        let dep2 = services.GetRequiredService<'Dep2>()
+        let dep2: 'Dep2 = services.GetRequiredService<'Dep2>()
 
-        let dep3 = services.GetRequiredService<'Dep3>()
+        let dep3: 'Dep3 = services.GetRequiredService<'Dep3>()
 
-        let dep4 = services.GetRequiredService<'Dep4>()
+        let dep4: 'Dep4 = services.GetRequiredService<'Dep4>()
 
-        let dep5 = services.GetRequiredService<'Dep5>()
+        let dep5: 'Dep5 = services.GetRequiredService<'Dep5>()
 
         handler dep0 dep1 dep2 dep3 dep4 dep5 next ctx
 
@@ -180,21 +180,21 @@ module DependencyInjection =
                 (ctx : HttpContext)
                 : Task<HttpContext option> =
 
-        let services = ctx.RequestServices
+        let services: System.IServiceProvider = ctx.RequestServices
 
-        let dep0 = services.GetRequiredService<'Dep0>()
+        let dep0: 'Dep0 = services.GetRequiredService<'Dep0>()
 
-        let dep1 = services.GetRequiredService<'Dep1>()
+        let dep1: 'Dep1 = services.GetRequiredService<'Dep1>()
 
-        let dep2 = services.GetRequiredService<'Dep2>()
+        let dep2: 'Dep2 = services.GetRequiredService<'Dep2>()
 
-        let dep3 = services.GetRequiredService<'Dep3>()
+        let dep3: 'Dep3 = services.GetRequiredService<'Dep3>()
 
-        let dep4 = services.GetRequiredService<'Dep4>()
+        let dep4: 'Dep4 = services.GetRequiredService<'Dep4>()
 
-        let dep5 = services.GetRequiredService<'Dep5>()
+        let dep5: 'Dep5 = services.GetRequiredService<'Dep5>()
 
-        let dep6 = services.GetRequiredService<'Dep6>()
+        let dep6: 'Dep6 = services.GetRequiredService<'Dep6>()
 
         handler dep0 dep1 dep2 dep3 dep4 dep5 dep6 next ctx
 
@@ -210,9 +210,9 @@ module DependencyInjection =
                              (ctx : HttpContext)
                              : Task<HttpContext option> =
 
-        let services = ctx.RequestServices
+        let services: System.IServiceProvider = ctx.RequestServices
 
-        let dep = services.GetRequiredService<'Dep>()
+        let dep: 'Dep = services.GetRequiredService<'Dep>()
 
         handler model dep next ctx
 
@@ -228,11 +228,11 @@ module DependencyInjection =
                     (ctx : HttpContext)
                     : Task<HttpContext option> =
 
-        let services = ctx.RequestServices
+        let services: System.IServiceProvider = ctx.RequestServices
 
-        let dep0 = services.GetRequiredService<'Dep0>()
+        let dep0: 'Dep0 = services.GetRequiredService<'Dep0>()
 
-        let dep1 = services.GetRequiredService<'Dep1>()
+        let dep1: 'Dep1 = services.GetRequiredService<'Dep1>()
 
         handler model dep0 dep1 next ctx
 
@@ -248,13 +248,13 @@ module DependencyInjection =
                     (ctx : HttpContext)
                     : Task<HttpContext option> =
 
-        let services = ctx.RequestServices
+        let services: System.IServiceProvider = ctx.RequestServices
 
-        let dep0 = services.GetRequiredService<'Dep0>()
+        let dep0: 'Dep0 = services.GetRequiredService<'Dep0>()
 
-        let dep1 = services.GetRequiredService<'Dep1>()
+        let dep1: 'Dep1 = services.GetRequiredService<'Dep1>()
 
-        let dep2 = services.GetRequiredService<'Dep2>()
+        let dep2: 'Dep2 = services.GetRequiredService<'Dep2>()
 
         handler model dep0 dep1 dep2 next ctx
 
@@ -270,15 +270,15 @@ module DependencyInjection =
                     (ctx : HttpContext)
                     : Task<HttpContext option> =
 
-        let services = ctx.RequestServices
+        let services: System.IServiceProvider = ctx.RequestServices
 
-        let dep0 = services.GetRequiredService<'Dep0>()
+        let dep0: 'Dep0 = services.GetRequiredService<'Dep0>()
 
-        let dep1 = services.GetRequiredService<'Dep1>()
+        let dep1: 'Dep1 = services.GetRequiredService<'Dep1>()
 
-        let dep2 = services.GetRequiredService<'Dep2>()
+        let dep2: 'Dep2 = services.GetRequiredService<'Dep2>()
 
-        let dep3 = services.GetRequiredService<'Dep3>()
+        let dep3: 'Dep3 = services.GetRequiredService<'Dep3>()
 
         handler model dep0 dep1 dep2 dep3 next ctx
 
@@ -294,17 +294,17 @@ module DependencyInjection =
                     (ctx : HttpContext)
                     : Task<HttpContext option> =
 
-        let services = ctx.RequestServices
+        let services: System.IServiceProvider = ctx.RequestServices
 
-        let dep0 = services.GetRequiredService<'Dep0>()
+        let dep0: 'Dep0 = services.GetRequiredService<'Dep0>()
 
-        let dep1 = services.GetRequiredService<'Dep1>()
+        let dep1: 'Dep1 = services.GetRequiredService<'Dep1>()
 
-        let dep2 = services.GetRequiredService<'Dep2>()
+        let dep2: 'Dep2 = services.GetRequiredService<'Dep2>()
 
-        let dep3 = services.GetRequiredService<'Dep3>()
+        let dep3: 'Dep3 = services.GetRequiredService<'Dep3>()
 
-        let dep4 = services.GetRequiredService<'Dep4>()
+        let dep4: 'Dep4 = services.GetRequiredService<'Dep4>()
 
         handler model dep0 dep1 dep2 dep3 dep4 next ctx
 
@@ -320,19 +320,19 @@ module DependencyInjection =
                     (ctx : HttpContext)
                     : Task<HttpContext option> =
 
-        let services = ctx.RequestServices
+        let services: System.IServiceProvider = ctx.RequestServices
 
-        let dep0 = services.GetRequiredService<'Dep0>()
+        let dep0: 'Dep0 = services.GetRequiredService<'Dep0>()
 
-        let dep1 = services.GetRequiredService<'Dep1>()
+        let dep1: 'Dep1 = services.GetRequiredService<'Dep1>()
 
-        let dep2 = services.GetRequiredService<'Dep2>()
+        let dep2: 'Dep2 = services.GetRequiredService<'Dep2>()
 
-        let dep3 = services.GetRequiredService<'Dep3>()
+        let dep3: 'Dep3 = services.GetRequiredService<'Dep3>()
 
-        let dep4 = services.GetRequiredService<'Dep4>()
+        let dep4: 'Dep4 = services.GetRequiredService<'Dep4>()
 
-        let dep5 = services.GetRequiredService<'Dep5>()
+        let dep5: 'Dep5 = services.GetRequiredService<'Dep5>()
 
         handler model dep0 dep1 dep2 dep3 dep4 dep5 next ctx
 
@@ -348,20 +348,20 @@ module DependencyInjection =
                     (ctx : HttpContext)
                     : Task<HttpContext option> =
 
-        let services = ctx.RequestServices
+        let services: System.IServiceProvider = ctx.RequestServices
 
-        let dep0 = services.GetRequiredService<'Dep0>()
+        let dep0: 'Dep0 = services.GetRequiredService<'Dep0>()
 
-        let dep1 = services.GetRequiredService<'Dep1>()
+        let dep1: 'Dep1 = services.GetRequiredService<'Dep1>()
 
-        let dep2 = services.GetRequiredService<'Dep2>()
+        let dep2: 'Dep2 = services.GetRequiredService<'Dep2>()
 
-        let dep3 = services.GetRequiredService<'Dep3>()
+        let dep3: 'Dep3 = services.GetRequiredService<'Dep3>()
 
-        let dep4 = services.GetRequiredService<'Dep4>()
+        let dep4: 'Dep4 = services.GetRequiredService<'Dep4>()
 
-        let dep5 = services.GetRequiredService<'Dep5>()
+        let dep5: 'Dep5 = services.GetRequiredService<'Dep5>()
 
-        let dep6 = services.GetRequiredService<'Dep6>()
+        let dep6: 'Dep6 = services.GetRequiredService<'Dep6>()
 
         handler model dep0 dep1 dep2 dep3 dep4 dep5 dep6 next ctx
