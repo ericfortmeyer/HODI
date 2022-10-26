@@ -25,7 +25,7 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest, windows-latest, macos-latest ]
-        dotnet: [ '7.0.x', '6.0.x', '5.0.x' ]
+        dotnet: [ '6.0.x' ]
     name: Dotnet ${{ matrix.dotnet }} ${{ matrix.os }} Runner
     steps:
     - uses: actions/checkout@v3
@@ -39,7 +39,6 @@ jobs:
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: ${{ matrix.dotnet }}
-        dotnet-quality: preview
     - name: Restore Dependencies
       run: |
         dotnet restore src/${{ env.PROJECT_NAME }}
