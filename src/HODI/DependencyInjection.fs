@@ -19,14 +19,17 @@ module DependencyInjection =
     /// <exception cref="System.InvalidOperationException">
     /// There is no service of requested type
     /// </exception>
-    let inject (handler : 'Dep -> (HttpContext -> Task<HttpContext option>) -> (HttpContext -> Task<HttpContext option>))
-               (next : HttpContext -> Task<HttpContext option>)
-               (ctx : HttpContext)
-               : Task<HttpContext option> =
+    let inject
+        (handler : 'Dep -> (HttpContext -> Task<HttpContext option>) -> (HttpContext -> Task<HttpContext option>))
+        (next : HttpContext -> Task<HttpContext option>)
+        (ctx : HttpContext)
+        : Task<HttpContext option> =
 
-        let services: System.IServiceProvider = ctx.RequestServices
+        let services : System.IServiceProvider =
+            ctx.RequestServices
 
-        let dep: 'Dep = services.GetRequiredService<'Dep>()
+        let dep : 'Dep =
+            services.GetRequiredService<'Dep>()
 
         handler dep next ctx
 
@@ -40,16 +43,23 @@ module DependencyInjection =
     /// <exception cref="System.InvalidOperationException">
     /// There is no service of requested type
     /// </exception>
-    let inject2 (handler : 'Dep0 -> 'Dep1 -> (HttpContext -> Task<HttpContext option>) -> (HttpContext -> Task<HttpContext option>))
-                (next : HttpContext -> Task<HttpContext option>)
-                (ctx : HttpContext)
-                : Task<HttpContext option> =
+    let inject2
+        (handler : 'Dep0
+                       -> 'Dep1
+                       -> (HttpContext -> Task<HttpContext option>)
+                       -> (HttpContext -> Task<HttpContext option>))
+        (next : HttpContext -> Task<HttpContext option>)
+        (ctx : HttpContext)
+        : Task<HttpContext option> =
 
-        let services: System.IServiceProvider = ctx.RequestServices
+        let services : System.IServiceProvider =
+            ctx.RequestServices
 
-        let dep0: 'Dep0 = services.GetRequiredService<'Dep0>()
+        let dep0 : 'Dep0 =
+            services.GetRequiredService<'Dep0>()
 
-        let dep1: 'Dep1 = services.GetRequiredService<'Dep1>()
+        let dep1 : 'Dep1 =
+            services.GetRequiredService<'Dep1>()
 
         handler dep0 dep1 next ctx
 
@@ -63,18 +73,27 @@ module DependencyInjection =
     /// <exception cref="System.InvalidOperationException">
     /// There is no service of requested type
     /// </exception>
-    let inject3 (handler : 'Dep0 -> 'Dep1 -> 'Dep2 -> (HttpContext -> Task<HttpContext option>) -> (HttpContext -> Task<HttpContext option>))
-                (next : HttpContext -> Task<HttpContext option>)
-                (ctx : HttpContext)
-                : Task<HttpContext option> =
+    let inject3
+        (handler : 'Dep0
+                       -> 'Dep1
+                       -> 'Dep2
+                       -> (HttpContext -> Task<HttpContext option>)
+                       -> (HttpContext -> Task<HttpContext option>))
+        (next : HttpContext -> Task<HttpContext option>)
+        (ctx : HttpContext)
+        : Task<HttpContext option> =
 
-        let services: System.IServiceProvider = ctx.RequestServices
+        let services : System.IServiceProvider =
+            ctx.RequestServices
 
-        let dep0: 'Dep0 = services.GetRequiredService<'Dep0>()
+        let dep0 : 'Dep0 =
+            services.GetRequiredService<'Dep0>()
 
-        let dep1: 'Dep1 = services.GetRequiredService<'Dep1>()
+        let dep1 : 'Dep1 =
+            services.GetRequiredService<'Dep1>()
 
-        let dep2: 'Dep2 = services.GetRequiredService<'Dep2>()
+        let dep2 : 'Dep2 =
+            services.GetRequiredService<'Dep2>()
 
         handler dep0 dep1 dep2 next ctx
 
@@ -88,20 +107,31 @@ module DependencyInjection =
     /// <exception cref="System.InvalidOperationException">
     /// There is no service of requested type
     /// </exception>
-    let inject4 (handler : 'Dep0 -> 'Dep1 -> 'Dep2 -> 'Dep3 -> (HttpContext -> Task<HttpContext option>) -> (HttpContext -> Task<HttpContext option>))
-                (next : HttpContext -> Task<HttpContext option>)
-                (ctx : HttpContext)
-                : Task<HttpContext option> =
+    let inject4
+        (handler : 'Dep0
+                       -> 'Dep1
+                       -> 'Dep2
+                       -> 'Dep3
+                       -> (HttpContext -> Task<HttpContext option>)
+                       -> (HttpContext -> Task<HttpContext option>))
+        (next : HttpContext -> Task<HttpContext option>)
+        (ctx : HttpContext)
+        : Task<HttpContext option> =
 
-        let services: System.IServiceProvider = ctx.RequestServices
+        let services : System.IServiceProvider =
+            ctx.RequestServices
 
-        let dep0: 'Dep0 = services.GetRequiredService<'Dep0>()
+        let dep0 : 'Dep0 =
+            services.GetRequiredService<'Dep0>()
 
-        let dep1: 'Dep1 = services.GetRequiredService<'Dep1>()
+        let dep1 : 'Dep1 =
+            services.GetRequiredService<'Dep1>()
 
-        let dep2: 'Dep2 = services.GetRequiredService<'Dep2>()
+        let dep2 : 'Dep2 =
+            services.GetRequiredService<'Dep2>()
 
-        let dep3: 'Dep3 = services.GetRequiredService<'Dep3>()
+        let dep3 : 'Dep3 =
+            services.GetRequiredService<'Dep3>()
 
         handler dep0 dep1 dep2 dep3 next ctx
 
@@ -115,22 +145,35 @@ module DependencyInjection =
     /// <exception cref="System.InvalidOperationException">
     /// There is no service of requested type
     /// </exception>
-    let inject5 (handler : 'Dep0 -> 'Dep1 -> 'Dep2 -> 'Dep3 -> 'Dep4 -> (HttpContext -> Task<HttpContext option>) -> (HttpContext -> Task<HttpContext option>))
-                (next : HttpContext -> Task<HttpContext option>)
-                (ctx : HttpContext)
-                : Task<HttpContext option> =
+    let inject5
+        (handler : 'Dep0
+                       -> 'Dep1
+                       -> 'Dep2
+                       -> 'Dep3
+                       -> 'Dep4
+                       -> (HttpContext -> Task<HttpContext option>)
+                       -> (HttpContext -> Task<HttpContext option>))
+        (next : HttpContext -> Task<HttpContext option>)
+        (ctx : HttpContext)
+        : Task<HttpContext option> =
 
-        let services: System.IServiceProvider = ctx.RequestServices
+        let services : System.IServiceProvider =
+            ctx.RequestServices
 
-        let dep0: 'Dep0 = services.GetRequiredService<'Dep0>()
+        let dep0 : 'Dep0 =
+            services.GetRequiredService<'Dep0>()
 
-        let dep1: 'Dep1 = services.GetRequiredService<'Dep1>()
+        let dep1 : 'Dep1 =
+            services.GetRequiredService<'Dep1>()
 
-        let dep2: 'Dep2 = services.GetRequiredService<'Dep2>()
+        let dep2 : 'Dep2 =
+            services.GetRequiredService<'Dep2>()
 
-        let dep3: 'Dep3 = services.GetRequiredService<'Dep3>()
+        let dep3 : 'Dep3 =
+            services.GetRequiredService<'Dep3>()
 
-        let dep4: 'Dep4 = services.GetRequiredService<'Dep4>()
+        let dep4 : 'Dep4 =
+            services.GetRequiredService<'Dep4>()
 
         handler dep0 dep1 dep2 dep3 dep4 next ctx
 
@@ -144,24 +187,39 @@ module DependencyInjection =
     /// <exception cref="System.InvalidOperationException">
     /// There is no service of requested type
     /// </exception>
-    let inject6 (handler : 'Dep0 -> 'Dep1 -> 'Dep2 -> 'Dep3 -> 'Dep4 -> 'Dep5 -> (HttpContext -> Task<HttpContext option>) -> (HttpContext -> Task<HttpContext option>))
-                (next : HttpContext -> Task<HttpContext option>)
-                (ctx : HttpContext)
-                : Task<HttpContext option> =
+    let inject6
+        (handler : 'Dep0
+                       -> 'Dep1
+                       -> 'Dep2
+                       -> 'Dep3
+                       -> 'Dep4
+                       -> 'Dep5
+                       -> (HttpContext -> Task<HttpContext option>)
+                       -> (HttpContext -> Task<HttpContext option>))
+        (next : HttpContext -> Task<HttpContext option>)
+        (ctx : HttpContext)
+        : Task<HttpContext option> =
 
-        let services: System.IServiceProvider = ctx.RequestServices
+        let services : System.IServiceProvider =
+            ctx.RequestServices
 
-        let dep0: 'Dep0 = services.GetRequiredService<'Dep0>()
+        let dep0 : 'Dep0 =
+            services.GetRequiredService<'Dep0>()
 
-        let dep1: 'Dep1 = services.GetRequiredService<'Dep1>()
+        let dep1 : 'Dep1 =
+            services.GetRequiredService<'Dep1>()
 
-        let dep2: 'Dep2 = services.GetRequiredService<'Dep2>()
+        let dep2 : 'Dep2 =
+            services.GetRequiredService<'Dep2>()
 
-        let dep3: 'Dep3 = services.GetRequiredService<'Dep3>()
+        let dep3 : 'Dep3 =
+            services.GetRequiredService<'Dep3>()
 
-        let dep4: 'Dep4 = services.GetRequiredService<'Dep4>()
+        let dep4 : 'Dep4 =
+            services.GetRequiredService<'Dep4>()
 
-        let dep5: 'Dep5 = services.GetRequiredService<'Dep5>()
+        let dep5 : 'Dep5 =
+            services.GetRequiredService<'Dep5>()
 
         handler dep0 dep1 dep2 dep3 dep4 dep5 next ctx
 
@@ -175,26 +233,43 @@ module DependencyInjection =
     /// <exception cref="System.InvalidOperationException">
     /// There is no service of requested type
     /// </exception>
-    let inject7 (handler : 'Dep0 -> 'Dep1 -> 'Dep2 -> 'Dep3 -> 'Dep4 -> 'Dep5 -> 'Dep6 -> (HttpContext -> Task<HttpContext option>) -> (HttpContext -> Task<HttpContext option>))
-                (next : HttpContext -> Task<HttpContext option>)
-                (ctx : HttpContext)
-                : Task<HttpContext option> =
+    let inject7
+        (handler : 'Dep0
+                       -> 'Dep1
+                       -> 'Dep2
+                       -> 'Dep3
+                       -> 'Dep4
+                       -> 'Dep5
+                       -> 'Dep6
+                       -> (HttpContext -> Task<HttpContext option>)
+                       -> (HttpContext -> Task<HttpContext option>))
+        (next : HttpContext -> Task<HttpContext option>)
+        (ctx : HttpContext)
+        : Task<HttpContext option> =
 
-        let services: System.IServiceProvider = ctx.RequestServices
+        let services : System.IServiceProvider =
+            ctx.RequestServices
 
-        let dep0: 'Dep0 = services.GetRequiredService<'Dep0>()
+        let dep0 : 'Dep0 =
+            services.GetRequiredService<'Dep0>()
 
-        let dep1: 'Dep1 = services.GetRequiredService<'Dep1>()
+        let dep1 : 'Dep1 =
+            services.GetRequiredService<'Dep1>()
 
-        let dep2: 'Dep2 = services.GetRequiredService<'Dep2>()
+        let dep2 : 'Dep2 =
+            services.GetRequiredService<'Dep2>()
 
-        let dep3: 'Dep3 = services.GetRequiredService<'Dep3>()
+        let dep3 : 'Dep3 =
+            services.GetRequiredService<'Dep3>()
 
-        let dep4: 'Dep4 = services.GetRequiredService<'Dep4>()
+        let dep4 : 'Dep4 =
+            services.GetRequiredService<'Dep4>()
 
-        let dep5: 'Dep5 = services.GetRequiredService<'Dep5>()
+        let dep5 : 'Dep5 =
+            services.GetRequiredService<'Dep5>()
 
-        let dep6: 'Dep6 = services.GetRequiredService<'Dep6>()
+        let dep6 : 'Dep6 =
+            services.GetRequiredService<'Dep6>()
 
         handler dep0 dep1 dep2 dep3 dep4 dep5 dep6 next ctx
 
@@ -204,15 +279,18 @@ module DependencyInjection =
     /// <exception cref="System.InvalidOperationException">
     /// There is no service of requested type
     /// </exception>
-    let injectPlus<'T, 'Dep> (handler : 'T -> 'Dep -> (HttpContext -> Task<HttpContext option>) -> (HttpContext -> Task<HttpContext option>))
-                             (model : 'T)
-                             (next : HttpContext -> Task<HttpContext option>)
-                             (ctx : HttpContext)
-                             : Task<HttpContext option> =
+    let injectPlus<'T, 'Dep>
+        (handler : 'T -> 'Dep -> (HttpContext -> Task<HttpContext option>) -> (HttpContext -> Task<HttpContext option>))
+        (model : 'T)
+        (next : HttpContext -> Task<HttpContext option>)
+        (ctx : HttpContext)
+        : Task<HttpContext option> =
 
-        let services: System.IServiceProvider = ctx.RequestServices
+        let services : System.IServiceProvider =
+            ctx.RequestServices
 
-        let dep: 'Dep = services.GetRequiredService<'Dep>()
+        let dep : 'Dep =
+            services.GetRequiredService<'Dep>()
 
         handler model dep next ctx
 
@@ -222,17 +300,25 @@ module DependencyInjection =
     /// <exception cref="System.InvalidOperationException">
     /// There is no service of requested type
     /// </exception>
-    let inject2Plus (handler : 'T -> 'Dep0 -> 'Dep1 -> (HttpContext -> Task<HttpContext option>) -> (HttpContext -> Task<HttpContext option>))
-                    (model : 'T)
-                    (next : HttpContext -> Task<HttpContext option>)
-                    (ctx : HttpContext)
-                    : Task<HttpContext option> =
+    let inject2Plus
+        (handler : 'T
+                       -> 'Dep0
+                       -> 'Dep1
+                       -> (HttpContext -> Task<HttpContext option>)
+                       -> (HttpContext -> Task<HttpContext option>))
+        (model : 'T)
+        (next : HttpContext -> Task<HttpContext option>)
+        (ctx : HttpContext)
+        : Task<HttpContext option> =
 
-        let services: System.IServiceProvider = ctx.RequestServices
+        let services : System.IServiceProvider =
+            ctx.RequestServices
 
-        let dep0: 'Dep0 = services.GetRequiredService<'Dep0>()
+        let dep0 : 'Dep0 =
+            services.GetRequiredService<'Dep0>()
 
-        let dep1: 'Dep1 = services.GetRequiredService<'Dep1>()
+        let dep1 : 'Dep1 =
+            services.GetRequiredService<'Dep1>()
 
         handler model dep0 dep1 next ctx
 
@@ -242,19 +328,29 @@ module DependencyInjection =
     /// <exception cref="System.InvalidOperationException">
     /// There is no service of requested type
     /// </exception>
-    let inject3Plus (handler : 'T -> 'Dep0 -> 'Dep1 -> 'Dep2 -> (HttpContext -> Task<HttpContext option>) -> (HttpContext -> Task<HttpContext option>))
-                    (model : 'T)
-                    (next : HttpContext -> Task<HttpContext option>)
-                    (ctx : HttpContext)
-                    : Task<HttpContext option> =
+    let inject3Plus
+        (handler : 'T
+                       -> 'Dep0
+                       -> 'Dep1
+                       -> 'Dep2
+                       -> (HttpContext -> Task<HttpContext option>)
+                       -> (HttpContext -> Task<HttpContext option>))
+        (model : 'T)
+        (next : HttpContext -> Task<HttpContext option>)
+        (ctx : HttpContext)
+        : Task<HttpContext option> =
 
-        let services: System.IServiceProvider = ctx.RequestServices
+        let services : System.IServiceProvider =
+            ctx.RequestServices
 
-        let dep0: 'Dep0 = services.GetRequiredService<'Dep0>()
+        let dep0 : 'Dep0 =
+            services.GetRequiredService<'Dep0>()
 
-        let dep1: 'Dep1 = services.GetRequiredService<'Dep1>()
+        let dep1 : 'Dep1 =
+            services.GetRequiredService<'Dep1>()
 
-        let dep2: 'Dep2 = services.GetRequiredService<'Dep2>()
+        let dep2 : 'Dep2 =
+            services.GetRequiredService<'Dep2>()
 
         handler model dep0 dep1 dep2 next ctx
 
@@ -264,21 +360,33 @@ module DependencyInjection =
     /// <exception cref="System.InvalidOperationException">
     /// There is no service of requested type
     /// </exception>
-    let inject4Plus (handler : 'T -> 'Dep0 -> 'Dep1 -> 'Dep2 -> 'Dep3 -> (HttpContext -> Task<HttpContext option>) -> (HttpContext -> Task<HttpContext option>))
-                    (model : 'T)
-                    (next : HttpContext -> Task<HttpContext option>)
-                    (ctx : HttpContext)
-                    : Task<HttpContext option> =
+    let inject4Plus
+        (handler : 'T
+                       -> 'Dep0
+                       -> 'Dep1
+                       -> 'Dep2
+                       -> 'Dep3
+                       -> (HttpContext -> Task<HttpContext option>)
+                       -> (HttpContext -> Task<HttpContext option>))
+        (model : 'T)
+        (next : HttpContext -> Task<HttpContext option>)
+        (ctx : HttpContext)
+        : Task<HttpContext option> =
 
-        let services: System.IServiceProvider = ctx.RequestServices
+        let services : System.IServiceProvider =
+            ctx.RequestServices
 
-        let dep0: 'Dep0 = services.GetRequiredService<'Dep0>()
+        let dep0 : 'Dep0 =
+            services.GetRequiredService<'Dep0>()
 
-        let dep1: 'Dep1 = services.GetRequiredService<'Dep1>()
+        let dep1 : 'Dep1 =
+            services.GetRequiredService<'Dep1>()
 
-        let dep2: 'Dep2 = services.GetRequiredService<'Dep2>()
+        let dep2 : 'Dep2 =
+            services.GetRequiredService<'Dep2>()
 
-        let dep3: 'Dep3 = services.GetRequiredService<'Dep3>()
+        let dep3 : 'Dep3 =
+            services.GetRequiredService<'Dep3>()
 
         handler model dep0 dep1 dep2 dep3 next ctx
 
@@ -288,23 +396,37 @@ module DependencyInjection =
     /// <exception cref="System.InvalidOperationException">
     /// There is no service of requested type
     /// </exception>
-    let inject5Plus (handler : 'T -> 'Dep0 -> 'Dep1 -> 'Dep2 -> 'Dep3 -> 'Dep4 -> (HttpContext -> Task<HttpContext option>) -> (HttpContext -> Task<HttpContext option>))
-                    (model : 'T)
-                    (next : HttpContext -> Task<HttpContext option>)
-                    (ctx : HttpContext)
-                    : Task<HttpContext option> =
+    let inject5Plus
+        (handler : 'T
+                       -> 'Dep0
+                       -> 'Dep1
+                       -> 'Dep2
+                       -> 'Dep3
+                       -> 'Dep4
+                       -> (HttpContext -> Task<HttpContext option>)
+                       -> (HttpContext -> Task<HttpContext option>))
+        (model : 'T)
+        (next : HttpContext -> Task<HttpContext option>)
+        (ctx : HttpContext)
+        : Task<HttpContext option> =
 
-        let services: System.IServiceProvider = ctx.RequestServices
+        let services : System.IServiceProvider =
+            ctx.RequestServices
 
-        let dep0: 'Dep0 = services.GetRequiredService<'Dep0>()
+        let dep0 : 'Dep0 =
+            services.GetRequiredService<'Dep0>()
 
-        let dep1: 'Dep1 = services.GetRequiredService<'Dep1>()
+        let dep1 : 'Dep1 =
+            services.GetRequiredService<'Dep1>()
 
-        let dep2: 'Dep2 = services.GetRequiredService<'Dep2>()
+        let dep2 : 'Dep2 =
+            services.GetRequiredService<'Dep2>()
 
-        let dep3: 'Dep3 = services.GetRequiredService<'Dep3>()
+        let dep3 : 'Dep3 =
+            services.GetRequiredService<'Dep3>()
 
-        let dep4: 'Dep4 = services.GetRequiredService<'Dep4>()
+        let dep4 : 'Dep4 =
+            services.GetRequiredService<'Dep4>()
 
         handler model dep0 dep1 dep2 dep3 dep4 next ctx
 
@@ -314,25 +436,41 @@ module DependencyInjection =
     /// <exception cref="System.InvalidOperationException">
     /// There is no service of requested type
     /// </exception>
-    let inject6Plus (handler : 'T -> 'Dep0 -> 'Dep1 -> 'Dep2 -> 'Dep3 -> 'Dep4 -> 'Dep5 -> (HttpContext -> Task<HttpContext option>) -> (HttpContext -> Task<HttpContext option>))
-                    (model : 'T)
-                    (next : HttpContext -> Task<HttpContext option>)
-                    (ctx : HttpContext)
-                    : Task<HttpContext option> =
+    let inject6Plus
+        (handler : 'T
+                       -> 'Dep0
+                       -> 'Dep1
+                       -> 'Dep2
+                       -> 'Dep3
+                       -> 'Dep4
+                       -> 'Dep5
+                       -> (HttpContext -> Task<HttpContext option>)
+                       -> (HttpContext -> Task<HttpContext option>))
+        (model : 'T)
+        (next : HttpContext -> Task<HttpContext option>)
+        (ctx : HttpContext)
+        : Task<HttpContext option> =
 
-        let services: System.IServiceProvider = ctx.RequestServices
+        let services : System.IServiceProvider =
+            ctx.RequestServices
 
-        let dep0: 'Dep0 = services.GetRequiredService<'Dep0>()
+        let dep0 : 'Dep0 =
+            services.GetRequiredService<'Dep0>()
 
-        let dep1: 'Dep1 = services.GetRequiredService<'Dep1>()
+        let dep1 : 'Dep1 =
+            services.GetRequiredService<'Dep1>()
 
-        let dep2: 'Dep2 = services.GetRequiredService<'Dep2>()
+        let dep2 : 'Dep2 =
+            services.GetRequiredService<'Dep2>()
 
-        let dep3: 'Dep3 = services.GetRequiredService<'Dep3>()
+        let dep3 : 'Dep3 =
+            services.GetRequiredService<'Dep3>()
 
-        let dep4: 'Dep4 = services.GetRequiredService<'Dep4>()
+        let dep4 : 'Dep4 =
+            services.GetRequiredService<'Dep4>()
 
-        let dep5: 'Dep5 = services.GetRequiredService<'Dep5>()
+        let dep5 : 'Dep5 =
+            services.GetRequiredService<'Dep5>()
 
         handler model dep0 dep1 dep2 dep3 dep4 dep5 next ctx
 
@@ -342,26 +480,44 @@ module DependencyInjection =
     /// <exception cref="System.InvalidOperationException">
     /// There is no service of requested type
     /// </exception>
-    let inject7Plus (handler : 'T -> 'Dep0 -> 'Dep1 -> 'Dep2 -> 'Dep3 -> 'Dep4 -> 'Dep5 -> 'Dep6 -> (HttpContext -> Task<HttpContext option>) -> (HttpContext -> Task<HttpContext option>))
-                    (model : 'T)
-                    (next : HttpContext -> Task<HttpContext option>)
-                    (ctx : HttpContext)
-                    : Task<HttpContext option> =
+    let inject7Plus
+        (handler : 'T
+                       -> 'Dep0
+                       -> 'Dep1
+                       -> 'Dep2
+                       -> 'Dep3
+                       -> 'Dep4
+                       -> 'Dep5
+                       -> 'Dep6
+                       -> (HttpContext -> Task<HttpContext option>)
+                       -> (HttpContext -> Task<HttpContext option>))
+        (model : 'T)
+        (next : HttpContext -> Task<HttpContext option>)
+        (ctx : HttpContext)
+        : Task<HttpContext option> =
 
-        let services: System.IServiceProvider = ctx.RequestServices
+        let services : System.IServiceProvider =
+            ctx.RequestServices
 
-        let dep0: 'Dep0 = services.GetRequiredService<'Dep0>()
+        let dep0 : 'Dep0 =
+            services.GetRequiredService<'Dep0>()
 
-        let dep1: 'Dep1 = services.GetRequiredService<'Dep1>()
+        let dep1 : 'Dep1 =
+            services.GetRequiredService<'Dep1>()
 
-        let dep2: 'Dep2 = services.GetRequiredService<'Dep2>()
+        let dep2 : 'Dep2 =
+            services.GetRequiredService<'Dep2>()
 
-        let dep3: 'Dep3 = services.GetRequiredService<'Dep3>()
+        let dep3 : 'Dep3 =
+            services.GetRequiredService<'Dep3>()
 
-        let dep4: 'Dep4 = services.GetRequiredService<'Dep4>()
+        let dep4 : 'Dep4 =
+            services.GetRequiredService<'Dep4>()
 
-        let dep5: 'Dep5 = services.GetRequiredService<'Dep5>()
+        let dep5 : 'Dep5 =
+            services.GetRequiredService<'Dep5>()
 
-        let dep6: 'Dep6 = services.GetRequiredService<'Dep6>()
+        let dep6 : 'Dep6 =
+            services.GetRequiredService<'Dep6>()
 
         handler model dep0 dep1 dep2 dep3 dep4 dep5 dep6 next ctx
