@@ -41,31 +41,6 @@ type FakeDependency5() =
 type FakeDependency6() =
     inherit TestDependency()
 
-[<Test>]
-let ``The inject function should get a dependency from the service container and pass it to the given handler`` () =
-    let systemUnderTest = inject
-
-    let givenHandler =
-        fun (dep : FakeDependency0) next (ctx : HttpContext) ->
-            dep.AssertCreated()
-            next ctx
-
-    let serviceContainer : HttpContext =
-        Substitute.For<HttpContext>()
-
-    let services : ServiceCollection =
-        ServiceCollection()
-
-    services.AddTransient<FakeDependency0>() |> ignore
-
-    let provider : ServiceProvider =
-        services.BuildServiceProvider()
-
-    serviceContainer.RequestServices <- provider
-
-    systemUnderTest givenHandler next serviceContainer
-    |> ignore
-
 
 [<Test>]
 let ``The inject2 function should get 2 dependencies from the service container and pass it to the given handler`` () =
