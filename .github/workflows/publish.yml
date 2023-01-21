@@ -11,17 +11,17 @@ env:
   NUGET_FEED: https://api.nuget.org/v3/index.json
   NUGET_KEY: ${{ secrets.NUGET_KEY }}
 jobs:
-  build:
+  build-package:
     uses: ./.github/workflows/release_build.yml
   deploy:
-    needs: build
+    needs: build-package
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 6.0.*
+          dotnet-version: 7.0.*
       - name: Download Artifact
         uses: actions/download-artifact@v3
         with:

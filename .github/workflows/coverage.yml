@@ -11,14 +11,14 @@ env:
   DOTNET_CLI_TELEMETRY_OPTOUT: true
   DOTNET_NOLOGO: true
 jobs:
-  test:
+  test-coverage:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Setup .NET
         uses: actions/setup-dotnet@v2
         with:
-          dotnet-version: 6.0.*
+          dotnet-version: 7.0.*
       - name: Test
         run: |
           dotnet test --verbosity normal --results-directory coverage --collect:"XPlat Code Coverage" --settings coverlet.runsettings

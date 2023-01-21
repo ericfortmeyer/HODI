@@ -20,12 +20,12 @@ env:
   RELEASE_OS: 'ubuntu-latest'
   RELEASE_DOTNET_VERSION: 6.0.X
 jobs:
-  build:
+  build-targets:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [ ubuntu-latest, windows-latest, macos-latest ]
-        dotnet: [ '6.0.x' ]
+        dotnet: [ '6.0.x', '7.0.x' ]
     name: Dotnet ${{ matrix.dotnet }} ${{ matrix.os }} Runner
     steps:
     - uses: actions/checkout@v3
