@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
     <GenerateProgramFile>false</GenerateProgramFile>
@@ -14,7 +14,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.*" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.*" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.*" />
     <PackageReference Include="NSubstitute" Version="*" />
     <PackageReference Include="NUnit" Version="*" />
     <PackageReference Include="NUnit3TestAdapter" Version="*" />
@@ -31,7 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="FSharp.Core" Version="6.0.*" />
+    <PackageReference Update="FSharp.Core" Version="7.0.*" />
   </ItemGroup>
 
 </Project>
