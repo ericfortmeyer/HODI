@@ -1,3 +1,9 @@
+## v2.0.4 (2023-01-21)
+
+### Fix
+
+- **release_build.yml**: do not build test project
+
 ## v2.0.3 (2023-01-20)
 
 ### Fix
