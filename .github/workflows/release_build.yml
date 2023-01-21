@@ -7,12 +7,12 @@ env:
   DOTNET_NOLOGO: true
   PROJECT_NAME: HODI
 jobs:
-  build:
+  build-release:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [ubuntu-latest]
-        dotnet: ['6.0.x']
+        dotnet: ['7.0.x']
     name: Dotnet ${{ matrix.dotnet }} ${{ matrix.os }} Runner
     steps:
     - uses: actions/checkout@v3
@@ -21,7 +21,7 @@ jobs:
       with:
         dotnet-version: ${{ matrix.dotnet }}
     - name: Release Build
-      run: dotnet build --configuration Release --nologo --verbosity quiet
+      run: dotnet build --configuration Release --nologo --verbosity quiet src/$PROJECT_NAME
     - name: Create Release NuGet package
       run: |
         dotnet pack --no-build --nologo --verbosity normal --configuration Release --output nupkg src/$PROJECT_NAME/$PROJECT_NAME.*proj
