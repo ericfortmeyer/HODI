@@ -1,8 +1,6 @@
-<p align="center">
-    <img
-        alt="Logo of HODI"
-        src="https://raw.githubusercontent.com/ericfortmeyer/HODI/master/hodi.png" />
-</p>
+<img
+    alt="Logo of HODI"
+    src="https://raw.githubusercontent.com/ericfortmeyer/HODI/master/hodi.png" />
 
 # HODI
 
