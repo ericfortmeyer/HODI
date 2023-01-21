@@ -1,3 +1,9 @@
+## v2.0.3 (2023-01-20)
+
+### Fix
+
+- **README.md**: change logo alignment to center
+
 ## v2.0.2 (2023-01-20)
 
 ### Fix
