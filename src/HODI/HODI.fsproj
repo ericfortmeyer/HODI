@@ -1,19 +1,21 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Authors>Eric Fortmeyer</Authors>
     <Description>A set of functions used to inject dependencies into HTTP handlers in F# web applications.</Description>
-    <Copyright>Copyright (c) Eric Fortmeyer 2022</Copyright>
-	<PackageId>HODI</PackageId>
-	<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-	<RepositoryType>git</RepositoryType>
+    <Copyright>Copyright (c) Eric Fortmeyer 2023</Copyright>
+  	<PackageId>HODI</PackageId>
+  	<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+	  <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/ericfortmeyer/HODI</RepositoryUrl>
     <PackageTags>F#, FSharp, dependency injection, giraffe</PackageTags>
     <SignAssembly>false</SignAssembly>
     <PackageIcon>hodi.png</PackageIcon>
-    <Version>2.0.1</Version>
+    <Version>2.0.3</Version>
+    <IsPackable>true</IsPackable>
     <PackageReleaseNotes>Update dependencies</PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageProjectUrl>https://github.com/ericfortmeyer/HODI</PackageProjectUrl>
