@@ -2,7 +2,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <OutputType>Library</OutputType>
+    <TargetFrameworks>netstandard2.1;netstandard2.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Authors>Eric Fortmeyer</Authors>
     <Description>A set of functions used to inject dependencies into HTTP handlers in F# web applications.</Description>
@@ -15,8 +16,9 @@
     <SignAssembly>false</SignAssembly>
     <PackageIcon>hodi.png</PackageIcon>
     <Version>2.0.6</Version>
+    <IsAspNetCoreApp>true</IsAspNetCoreApp>
     <IsPackable>true</IsPackable>
-    <PackageReleaseNotes>Update dependencies</PackageReleaseNotes>
+    <PackageReleaseNotes>Add netstandard2.0 target</PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageProjectUrl>https://github.com/ericfortmeyer/HODI</PackageProjectUrl>
   </PropertyGroup>
