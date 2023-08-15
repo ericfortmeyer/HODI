@@ -3,7 +3,7 @@
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFrameworks>netstandard2.1;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.1;net6.0;net7.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Authors>Eric Fortmeyer</Authors>
     <Description>A set of functions used to inject dependencies into HTTP handlers in F# web applications.</Description>
@@ -18,7 +18,6 @@
     <Version>2.0.6</Version>
     <IsAspNetCoreApp>true</IsAspNetCoreApp>
     <IsPackable>true</IsPackable>
-    <PackageReleaseNotes>Add netstandard2.0 target</PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageProjectUrl>https://github.com/ericfortmeyer/HODI</PackageProjectUrl>
   </PropertyGroup>
@@ -28,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="FSharp.Core" Version="[6.0,7.0]" />
+    <PackageReference Update="FSharp.Core" Version="[6.0,7.0.400]" />
   </ItemGroup>
 
   <ItemGroup>
