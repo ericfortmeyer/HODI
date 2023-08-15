@@ -1,3 +1,9 @@
+## v2.1.0 (2023-08-14)
+
+### Feat
+
+- add more build targets
+
 ## v2.0.6 (2023-01-21)
 
 ### Fix
