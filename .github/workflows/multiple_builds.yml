@@ -18,14 +18,14 @@ env:
   PROJECT_NAME: HODI
   TARGET_FRAMEWORK: 'netstandard2.1'
   RELEASE_OS: 'ubuntu-latest'
-  RELEASE_DOTNET_VERSION: 6.0.X
+  RELEASE_DOTNET_VERSION: 7.0.X
 jobs:
   build-targets:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [ ubuntu-latest, windows-latest, macos-latest ]
-        dotnet: [ '6.0.x', '7.0.x' ]
+        dotnet: [ '7.0.x', '8.0.100-preview.7.23376.3' ]
     name: Dotnet ${{ matrix.dotnet }} ${{ matrix.os }} Runner
     steps:
     - uses: actions/checkout@v3
