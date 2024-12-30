@@ -9,6 +9,7 @@ open Microsoft.Extensions.DependencyInjection
 open NSubstitute
 
 open NUnit.Framework
+open NUnit.Framework.Legacy
 
 type HttpFunc = HttpContext -> Task<HttpContext option>
 
@@ -265,7 +266,7 @@ let ``The injectPlus function should get a dependency from the service container
 
     let givenHandler =
         fun (addl : string) (dep : FakeDependency0) next (ctx : HttpContext) ->
-            Assert.AreEqual(givenAdditionalArgument, addl)
+            ClassicAssert.AreEqual(givenAdditionalArgument, addl)
             dep.AssertCreated()
             next ctx
 
@@ -293,7 +294,7 @@ let ``The inject2Plus function should get 2 dependencies from the service contai
 
     let givenHandler =
         fun (addl : string) (dep : FakeDependency0) (dep2 : FakeDependency1) next (ctx : HttpContext) ->
-            Assert.AreEqual(givenAdditionalArgument, addl)
+            ClassicAssert.AreEqual(givenAdditionalArgument, addl)
             dep.AssertCreated()
             dep2.AssertCreated()
             next ctx
@@ -322,7 +323,7 @@ let ``The inject3Plus function should get 3 dependencies from the service contai
 
     let givenHandler =
         fun (addl : string) (dep : FakeDependency0) (dep2 : FakeDependency1) (dep3 : FakeDependency2) next (ctx : HttpContext) ->
-            Assert.AreEqual(givenAdditionalArgument, addl)
+            ClassicAssert.AreEqual(givenAdditionalArgument, addl)
             dep.AssertCreated()
             dep2.AssertCreated()
             dep3.AssertCreated()
@@ -353,7 +354,7 @@ let ``The inject4Plus function should get 4 dependencies from the service contai
 
     let givenHandler =
         fun (addl : string) (dep : FakeDependency0) (dep2 : FakeDependency1) (dep3 : FakeDependency2) (dep4 : FakeDependency3) next (ctx : HttpContext) ->
-            Assert.AreEqual(givenAdditionalArgument, addl)
+            ClassicAssert.AreEqual(givenAdditionalArgument, addl)
             dep.AssertCreated()
             dep2.AssertCreated()
             dep3.AssertCreated()
@@ -386,7 +387,7 @@ let ``The inject5Plus function should get 5 dependencies from the service contai
 
     let givenHandler =
         fun (addl : string) (dep : FakeDependency0) (dep2 : FakeDependency1) (dep3 : FakeDependency2) (dep4 : FakeDependency3) (dep5 : FakeDependency4) next (ctx : HttpContext) ->
-            Assert.AreEqual(givenAdditionalArgument, addl)
+            ClassicAssert.AreEqual(givenAdditionalArgument, addl)
             dep.AssertCreated()
             dep2.AssertCreated()
             dep3.AssertCreated()
@@ -421,7 +422,7 @@ let ``The inject6Plus function should get 6 dependencies from the service contai
 
     let givenHandler =
         fun (addl : string) (dep : FakeDependency0) (dep2 : FakeDependency1) (dep3 : FakeDependency2) (dep4 : FakeDependency3) (dep5 : FakeDependency4) (dep6 : FakeDependency5) next (ctx : HttpContext) ->
-            Assert.AreEqual(givenAdditionalArgument, addl)
+            ClassicAssert.AreEqual(givenAdditionalArgument, addl)
             dep.AssertCreated()
             dep2.AssertCreated()
             dep3.AssertCreated()
@@ -458,7 +459,7 @@ let ``The inject7Plus function should get 7 dependencies from the service contai
 
     let givenHandler =
         fun (addl : string) (dep : FakeDependency0) (dep2 : FakeDependency1) (dep3 : FakeDependency2) (dep4 : FakeDependency3) (dep5 : FakeDependency4) (dep6 : FakeDependency5) (dep7 : FakeDependency6) next (ctx : HttpContext) ->
-            Assert.AreEqual(givenAdditionalArgument, addl)
+            ClassicAssert.AreEqual(givenAdditionalArgument, addl)
             dep.AssertCreated()
             dep2.AssertCreated()
             dep3.AssertCreated()
