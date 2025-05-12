@@ -1,3 +1,11 @@
+## v2.2.0 (2025-05-11)
+
+### Feat
+
+- target netstandard2.1
+- target dotnet 8
+- widen version constraints
+
 ## v2.1.1 (2023-08-14)
 
 ## v2.1.0 (2023-08-14)
