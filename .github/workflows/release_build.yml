@@ -15,9 +15,9 @@ jobs:
         dotnet: ['8.0.x','9.0.x']
     name: Dotnet ${{ matrix.dotnet }} ${{ matrix.os }} Runner
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Setup .NET
-      uses: actions/setup-dotnet@v2
+      uses: actions/setup-dotnet@v4
       with:
         dotnet-version: ${{ matrix.dotnet }}
     - name: Release Build
@@ -26,7 +26,7 @@ jobs:
       run: |
         dotnet pack --no-build --nologo --verbosity normal --configuration Release --output nupkg src/$PROJECT_NAME/$PROJECT_NAME.*proj
     - name: Upload Artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: nupkg
         path: ./nupkg/*.nupkg
