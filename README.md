@@ -1,4 +1,6 @@
-![Logo of HODI](https://raw.githubusercontent.com/ericfortmeyer/HODI/master/hodi.png)
+<div align=center>
+    <img src="https://raw.githubusercontent.com/ericfortmeyer/HODI/master/hodi.png" alt="Logo of HODI">
+</div>
 
 # HODI
 
@@ -6,26 +8,29 @@ Higher Order Dependency Injection
 
 [HODI](https://www.nuget.org/packages/HODI/) is a set of functions designed to be simple and consistent with a minimal implementation.
 
-The purpose of this library is to make unit testing of functions used as HTTP handlers in F# web applications more straightforward.
-
-[![NuGet Info](https://buildstats.info/nuget/HODI?includePreReleases=true)](https://www.nuget.org/packages/HODI/)
-
-[![Build](https://github.com/ericfortmeyer/HODI/actions/workflows/multiple_builds.yml/badge.svg)](https://github.com/ericfortmeyer/HODI/actions/workflows/multiple_builds.yml)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/HODI.svg)](https://www.nuget.org/packages/HODI/)
 [![Coverage Status](https://coveralls.io/repos/github/ericfortmeyer/HODI/badge.svg?branch=main)](https://coveralls.io/github/ericfortmeyer/HODI?branch=main)
+
+## Why HODI?
+
+- **Testable by default**: pass dependencies as arguments, not service locators
+- **Type-safe**: compiler catches missing deps before runtime
+- **Works with Giraffe/web handlers**
 
 ## Install
 
-```
+```PowerShell
 PM> Install-Package HODI
 ```
 
 or...
 
-```
+```zsh
 dotnet add package HODI
 ```
 
 ## Defining Handlers
+
 Instead of...
 
 ```fsharp
@@ -48,6 +53,7 @@ let anotherWayHandler : HttpHandler =
 ```
 
 ## Usage
+
 The functions can be used when defining routes.
 
 ```fsharp
@@ -60,5 +66,6 @@ let app =
 ```
 
 ## Unit Testing
+
 When unit testing the HTTPHandler functions, you could simply pass the dependencies without having to set up a test server.
 In other words, the tests can focus on the handlers behavior instead of caring about dependency injection.

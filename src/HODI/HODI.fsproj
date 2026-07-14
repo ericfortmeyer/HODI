@@ -7,7 +7,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Authors>Eric Fortmeyer</Authors>
     <Description>A set of functions used to inject dependencies into HTTP handlers in F# web applications.</Description>
-    <Copyright>Copyright (c) Eric Fortmeyer 2025</Copyright>
+    <Copyright>Copyright (c) Eric Fortmeyer 2026</Copyright>
   	<PackageId>HODI</PackageId>
   	<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
 	  <RepositoryType>git</RepositoryType>
@@ -27,10 +27,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="FSharp.Core" Version="[6.0,)" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="..\..\hodi.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
@@ -42,8 +38,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Http" Version="[2.2,)" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="[7.0,)" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="[2.2,3.0)" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="[7.0,11.0)" />
   </ItemGroup>
 
 </Project>
