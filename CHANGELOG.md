@@ -1,3 +1,9 @@
+## v2.3.0 (2026-07-13)
+
+### Feat
+
+- upgrade dependencies, improve docs (#67)
+
 ## v2.2.0 (2025-05-13)
 
 ### Feat
