@@ -9,7 +9,7 @@ Higher Order Dependency Injection
 [HODI](https://www.nuget.org/packages/HODI/) is a set of functions designed to be simple and consistent with a minimal implementation.
 
 [![NuGet Downloads](https://img.shields.io/nuget/dt/HODI.svg)](https://www.nuget.org/packages/HODI/)
-[![Coverage Status](https://coveralls.io/repos/github/ericfortmeyer/HODI/badge.svg?branch=main)](https://coveralls.io/github/ericfortmeyer/HODI?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/ericfortmeyer/HODI/badge.svg?branch=main)](https://coveralls.io/github/ericfortmeyer/HODI)
 
 ## Why HODI?
 

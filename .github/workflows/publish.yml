@@ -9,7 +9,6 @@ env:
   DOTNET_NOLOGO: true
   PROJECT_NAME: HODI
   NUGET_FEED: https://api.nuget.org/v3/index.json
-  NUGET_KEY: ${{ secrets.NUGET_KEY }}
 jobs:
   build-package:
     uses: ericfortmeyer/HODI/.github/workflows/release_build.yml@main
@@ -29,4 +28,4 @@ jobs:
       - name: Push to NuGet Feed
         run: |
           ls -lah
-          dotnet nuget push ./*.nupkg --source $NUGET_FEED --skip-duplicate --api-key $NUGET_KEY
+          dotnet nuget push ./*.nupkg --source $NUGET_FEED --skip-duplicate
