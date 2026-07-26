@@ -35,6 +35,4 @@ jobs:
         with:
           user: ${{ secrets.NUGET_USER }}
       - name: Push to NuGet Feed
-        run: |
-          ls -lah
-          dotnet nuget push ./*.nupkg --source $NUGET_FEED --skip-duplicate --api-key ${{steps.login.outputs.NUGET_API_KEY}}
+        run: dotnet nuget push ./*.nupkg --source $NUGET_FEED --skip-duplicate --api-key ${{steps.login.outputs.NUGET_API_KEY}}
