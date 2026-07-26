@@ -1,5 +1,5 @@
 name: Generate and Upload Test Coverage Results
-on:
+on: 
   push:
     branches:
       - main
@@ -15,18 +15,19 @@ jobs:
   test-coverage:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
+          cache: true
+          cache-dependency-path: src/HODI/packages.lock.json
           dotnet-version: 10.0.*
+      - run: dotnet restore --locked-mode
       - name: Test
-        run: |
-          dotnet test --verbosity normal --results-directory coverage --collect:"XPlat Code Coverage" --settings coverlet.runsettings
-          wc -l coverage/*/coverage.info
-          mv --debug coverage/*/coverage.info coverage/lcov.info
+        run: dotnet test --verbosity normal --results-directory coverage --collect:"XPlat Code Coverage" --settings coverlet.runsettings
       - name: Coveralls
         uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          file: coverage/*/coverage.info
           debug: true
