@@ -17,8 +17,10 @@ jobs:
     steps:
     - uses: actions/checkout@v7
     - name: Setup .NET
-      uses: actions/setup-dotnet@v5
+      uses: actions/setup-dotnet@v6
       with:
+        cache: true
+        cache-dependency-path: src/HODI/packages.lock.json
         dotnet-version: ${{ matrix.dotnet }}
     - name: Release Build
       run: dotnet build --configuration Release --nologo --verbosity quiet src/$PROJECT_NAME
