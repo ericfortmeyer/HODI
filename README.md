@@ -1,8 +1,6 @@
-<div align=center>
-    <img src="https://raw.githubusercontent.com/ericfortmeyer/HODI/master/hodi.png" alt="Logo of HODI">
-</div>
-
 # HODI
+
+![Logo of HODI](https://raw.githubusercontent.com/ericfortmeyer/HODI/master/hodi.png)
 
 Higher Order Dependency Injection
 
