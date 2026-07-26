@@ -1,10 +1,11 @@
 name: Generate and Upload Test Coverage Results
-on: ["push", "pull_request"]
-    # branches:
-    #   - main
-    # paths:
-    #   - '**.fs'
-    #   - '.github/workflows/coverage.yml'
+on: 
+  push:
+    branches:
+      - main
+    paths:
+      - '**.fs'
+      - '.github/workflows/coverage.yml'
 env:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
