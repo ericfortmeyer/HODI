@@ -25,19 +25,15 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest, windows-latest, macos-latest ]
-        dotnet: [ '9.0.x', '10.0.x' ]
+        dotnet: [ '10.0.x' ]
     name: Dotnet ${{ matrix.dotnet }} ${{ matrix.os }} Runner
     steps:
     - uses: actions/checkout@v7
-    - uses: actions/cache@v4
-      with:
-        path: ~/.nuget/packages
-        key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-nuget-
     - name: Setup .NET
       uses: actions/setup-dotnet@v5
       with:
+        cache: true
+        cache-dependency-path: src/HODI/packages.lock.json
         dotnet-version: ${{ matrix.dotnet }}
     - name: Restore Dependencies
       run: |
