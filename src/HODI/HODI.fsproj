@@ -4,6 +4,7 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFrameworks>netstandard2.1</TargetFrameworks>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Authors>Eric Fortmeyer</Authors>
     <Description>A set of functions used to inject dependencies into HTTP handlers in F# web applications.</Description>
