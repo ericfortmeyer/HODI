@@ -5,12 +5,11 @@
             <DataCollector friendlyName="XPlat code coverage">
                 <Configuration>
                     <Format>lcov</Format>
-                    <Exclude>[HODI.Tests]*,</Exclude>
+                    <Exclude>[HODI.Tests]*</Exclude>
                     <SingleHit>false</SingleHit>
-                    <UseSourceLink>true</UseSourceLink>
+                    <UseSourceLink>false</UseSourceLink>
                     <IncludeTestAssembly>true</IncludeTestAssembly>
                     <SkipAutoProps>true</SkipAutoProps>
-                    <DeterministicReport>false</DeterministicReport>
                 </Configuration>
             </DataCollector>
         </DataCollectors>
