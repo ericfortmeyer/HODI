@@ -37,4 +37,4 @@ jobs:
         dotnet-version: ${{ matrix.dotnet }}
     - name: Build
       run: |
-        dotnet build --no-restore --configuration Release --verbosity quiet src/${{ env.PROJECT_NAME }}
+        dotnet build --configuration Release --verbosity quiet src/${{ env.PROJECT_NAME }}
